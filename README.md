@@ -23,6 +23,15 @@ cd AzureServicesByRegion
 
 Default run enumerates **Europe** using your current subscription and writes 5 files to the current directory.
 
+## See it before you run it
+
+Sample outputs for **Europe**, **US** and **Asia Pacific** are checked in under [`outputs/`](./outputs) so you can inspect the file shapes and the friendly-name mapping before running anything:
+
+- [`outputs/europe/`](./outputs/europe) — 17 regions, West Europe (195 providers) → Denmark East (54)
+- [`outputs/us/`](./outputs/us) — 20 regions, East US leads with 209 providers
+- [`outputs/asia-pacific/`](./outputs/asia-pacific) — 20 regions, Australia East leads with 167 providers
+- [`outputs/README.md`](./outputs/README.md) — full ranking tables and notes on Stage / EUAP / Jio regions
+
 ## Prerequisites
 
 - **Azure CLI** (`az`) on PATH — install from <https://learn.microsoft.com/cli/azure/install-azure-cli>
