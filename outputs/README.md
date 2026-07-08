@@ -1,15 +1,40 @@
 # Sample outputs
 
-Point-in-time snapshots produced by running `Get-AzureServicesByRegion.ps1`
-against three representative Azure geographies on **2026-07-08**.
+Point-in-time snapshots produced by the two scripts in this repo. Provided
+so you can see the exact shape of the outputs *before* running the tools
+yourself. Generated on **2026-07-08**.
 
-Provided so you can see the exact shape of the outputs *before* running the
-tool yourself. To regenerate against a live Azure subscription, run:
+## Layout
+
+```
+outputs/
+├── services-by-region/      <-- Get-AzureServicesByRegion.ps1 snapshots
+│   ├── europe/              (catalog of providers x regions per geography)
+│   ├── us/
+│   └── asia-pacific/
+└── coverage/                <-- Compare-AzureRegionCoverage.ps1 examples
+    ├── northeurope/         (one folder per source region)
+    ├── eastus/
+    ├── southeastasia/
+    └── uksouth/
+        └── europe-fallback/ (cross-geo scoring)
+```
+
+- **`services-by-region/`** — catalog view: which Azure resource providers are
+  available in each region of a chosen geography.
+- **`coverage/`** — coverage view: given a synthetic workload in a source
+  region, which other regions can host it (and what's missing).
+
+---
+
+# `services-by-region/` — regional catalogs
+
+To regenerate against a live Azure subscription:
 
 ```powershell
-./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Europe' -OutputDirectory ./outputs/europe
-./Get-AzureServicesByRegion.ps1 -GeographyGroup 'US'     -OutputDirectory ./outputs/us
-./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Asia Pacific' -OutputDirectory ./outputs/asia-pacific
+./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Europe' -OutputDirectory ./outputs/services-by-region/europe
+./Get-AzureServicesByRegion.ps1 -GeographyGroup 'US'     -OutputDirectory ./outputs/services-by-region/us
+./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Asia Pacific' -OutputDirectory ./outputs/services-by-region/asia-pacific
 ```
 
 Every geography snapshot contains the same 5 files:
@@ -24,7 +49,7 @@ Every geography snapshot contains the same 5 files:
 
 Total providers observed: **318** (42 global, 276 region-scoped).
 
-## Europe (17 regions) — [`outputs/europe/`](./europe)
+## Europe (17 regions) — [`outputs/services-by-region/europe/`](./services-by-region/europe)
 
 | Rank | Region | Physical | Available | Not available |
 | ---: | --- | --- | ---: | ---: |
@@ -46,7 +71,7 @@ Total providers observed: **318** (42 global, 276 region-scoped).
 | 16 | Belgium Central | Brussels | 57 | 219 |
 | 17 | Denmark East | Copenhagen | 54 | 222 |
 
-## United States (20 regions) — [`outputs/us/`](./us)
+## United States (20 regions) — [`outputs/services-by-region/us/`](./services-by-region/us)
 
 | Rank | Region | Physical | Available | Not available |
 | ---: | --- | --- | ---: | ---: |
@@ -68,7 +93,7 @@ are not customer-selectable. *EUAP* (Early Update Access Program) regions are
 where new features roll out first — customers with EUAP access can use them.
 That's why they show 0 or low provider counts.
 
-## Asia Pacific (20 regions) — [`outputs/asia-pacific/`](./asia-pacific)
+## Asia Pacific (20 regions) — [`outputs/services-by-region/asia-pacific/`](./services-by-region/asia-pacific)
 
 | Rank | Region | Physical | Available | Not available |
 | ---: | --- | --- | ---: | ---: |
@@ -93,7 +118,9 @@ That's why they show 0 or low provider counts.
 **Note:** *Stage* regions are internal. *Jio India* regions are operated by
 Jio Platforms and require a separate partnership to consume.
 
-## `Compare-AzureRegionCoverage.ps1` examples
+---
+
+# `coverage/` — coverage examples
 
 Sample outputs for **`Compare-AzureRegionCoverage.ps1`** are provided for
 **four different source regions across four geographies**, each with a
@@ -103,10 +130,10 @@ hand-crafted.
 
 | Folder | Source region | Geography | Types | Instances |
 | --- | --- | --- | ---: | ---: |
-| [`coverage-example-northeurope/`](./coverage-example-northeurope) | `northeurope` | Europe (17 regions) | 40 | 573 |
-| [`coverage-example-eastus/`](./coverage-example-eastus) | `eastus` | US (9 customer regions) | 54 | 1,327 |
-| [`coverage-example-southeastasia/`](./coverage-example-southeastasia) | `southeastasia` | Asia Pacific (18 regions) | 37 | 453 |
-| [`coverage-example-uksouth/`](./coverage-example-uksouth) | `uksouth` | UK (2 regions) + Europe fallback | 37 | 508 |
+| [`northeurope/`](./coverage/northeurope) | `northeurope` | Europe (17 regions) | 40 | 573 |
+| [`eastus/`](./coverage/eastus) | `eastus` | US (9 customer regions) | 54 | 1,327 |
+| [`southeastasia/`](./coverage/southeastasia) | `southeastasia` | Asia Pacific (18 regions) | 37 | 453 |
+| [`uksouth/`](./coverage/uksouth) | `uksouth` | UK (2 regions) + Europe fallback | 37 | 508 |
 
 Each folder contains:
 - `example-inventory.csv` — the synthetic workload (`ResourceType`, `Instances`).
@@ -124,30 +151,30 @@ all European regions — useful for cross-geography failover planning.
 ```powershell
 # Score every European region against a synthetic North Europe workload
 ./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope `
-    -InventoryFile ./outputs/coverage-example-northeurope/example-inventory.csv `
+    -InventoryFile ./outputs/coverage/northeurope/example-inventory.csv `
     -OutputDirectory ./out
 
 # Score every US region against a synthetic East US workload
 ./Compare-AzureRegionCoverage.ps1 -SourceRegion eastus -GeographyGroup 'US' `
-    -InventoryFile ./outputs/coverage-example-eastus/example-inventory.csv `
+    -InventoryFile ./outputs/coverage/eastus/example-inventory.csv `
     -OutputDirectory ./out
 
 # Score every Asia Pacific region against a synthetic Southeast Asia workload
 ./Compare-AzureRegionCoverage.ps1 -SourceRegion southeastasia -GeographyGroup 'Asia Pacific' `
-    -InventoryFile ./outputs/coverage-example-southeastasia/example-inventory.csv `
+    -InventoryFile ./outputs/coverage/southeastasia/example-inventory.csv `
     -OutputDirectory ./out
 
 # UK South workload, first against UK, then failover into Europe
 ./Compare-AzureRegionCoverage.ps1 -SourceRegion uksouth -GeographyGroup 'UK' `
-    -InventoryFile ./outputs/coverage-example-uksouth/example-inventory.csv `
+    -InventoryFile ./outputs/coverage/uksouth/example-inventory.csv `
     -OutputDirectory ./out
 ./Compare-AzureRegionCoverage.ps1 -SourceRegion uksouth -GeographyGroup 'Europe' `
-    -InventoryFile ./outputs/coverage-example-uksouth/example-inventory.csv `
+    -InventoryFile ./outputs/coverage/uksouth/example-inventory.csv `
     -OutputDirectory ./out/europe-fallback
 
 # Validate a single specific target
 ./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope `
-    -InventoryFile ./outputs/coverage-example-northeurope/example-inventory.csv `
+    -InventoryFile ./outputs/coverage/northeurope/example-inventory.csv `
     -TargetRegion swedencentral `
     -OutputDirectory ./out
 ```
@@ -228,7 +255,7 @@ non-Jio subscriptions.
 | 1 | UK South *(source)* | 97.3% | 1 | 8 |
 | 2 | UK West | 94.6% | 2 | 9 |
 
-**UK South failover into Europe** (see `coverage-example-uksouth/europe-fallback/`):
+**UK South failover into Europe** (see `uksouth/europe-fallback/`):
 
 | Rank | Region | Coverage | Missing | Instances at risk |
 | ---: | --- | ---: | ---: | ---: |

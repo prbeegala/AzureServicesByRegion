@@ -32,14 +32,14 @@ Default run enumerates **Europe** using your current subscription and writes 5 f
 Sample outputs are checked in under [`outputs/`](./outputs) so you can inspect the file shapes and the friendly-name mapping before running anything:
 
 - **`Get-AzureServicesByRegion`** snapshots:
-  - [`outputs/europe/`](./outputs/europe) — 17 regions, West Europe (195 providers) → Denmark East (54)
-  - [`outputs/us/`](./outputs/us) — 20 regions, East US leads with 209 providers
-  - [`outputs/asia-pacific/`](./outputs/asia-pacific) — 20 regions, Australia East leads with 167 providers
+  - [`outputs/services-by-region/europe/`](./outputs/services-by-region/europe) — 17 regions, West Europe (195 providers) → Denmark East (54)
+  - [`outputs/services-by-region/us/`](./outputs/services-by-region/us) — 20 regions, East US leads with 209 providers
+  - [`outputs/services-by-region/asia-pacific/`](./outputs/services-by-region/asia-pacific) — 20 regions, Australia East leads with 167 providers
 - **`Compare-AzureRegionCoverage`** examples (four different source regions):
-  - [`outputs/coverage-example-northeurope/`](./outputs/coverage-example-northeurope) — Europe geography (17 regions), 40 types, 573 instances. Includes validate-mode deep dives.
-  - [`outputs/coverage-example-eastus/`](./outputs/coverage-example-eastus) — US geography (9 customer regions), 54 types, 1,327 instances.
-  - [`outputs/coverage-example-southeastasia/`](./outputs/coverage-example-southeastasia) — Asia Pacific (18 regions), 37 types, 453 instances.
-  - [`outputs/coverage-example-uksouth/`](./outputs/coverage-example-uksouth) — UK (2 regions) + Europe fallback, 37 types, 508 instances.
+  - [`outputs/coverage/northeurope/`](./outputs/coverage/northeurope) — Europe geography (17 regions), 40 types, 573 instances. Includes validate-mode deep dives.
+  - [`outputs/coverage/eastus/`](./outputs/coverage/eastus) — US geography (9 customer regions), 54 types, 1,327 instances.
+  - [`outputs/coverage/southeastasia/`](./outputs/coverage/southeastasia) — Asia Pacific (18 regions), 37 types, 453 instances.
+  - [`outputs/coverage/uksouth/`](./outputs/coverage/uksouth) — UK (2 regions) + Europe fallback, 37 types, 508 instances.
 - [`outputs/README.md`](./outputs/README.md) — full ranking tables and notes on Stage / EUAP / Jio regions.
 
 ## Prerequisites
