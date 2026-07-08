@@ -2,8 +2,8 @@
 
 > **Two self-contained PowerShell tools for Azure regional planning:**
 >
-> 1. **`Get-AzureServicesByRegion.ps1`** — map every Azure resource provider (service) to every region of any Azure geography, with friendly names and categories.
-> 2. **`Compare-AzureRegionCoverage.ps1`** — take a region you actually deploy in and score every other region by how much of your workload it can host. Answers *"is Sweden Central a viable failover for my North Europe workload?"* or *"which European region best matches what I run today?"*
+> 1. **`Compare-AzureRegionCoverage.ps1`** — take a region you actually deploy in and score every other region by how much of your workload it can host. Answers *"is Sweden Central a viable failover for my North Europe workload?"* or *"which European region best matches what I run today?"*
+> 2. **`Get-AzureServicesByRegion.ps1`** — map every Azure resource provider (service) to every region of any Azure geography, with friendly names and categories.
 
 Point them at Europe, US, Asia Pacific, UK, Canada, Middle East, Africa, South America, Mexico — whatever geography your subscription or tenant can see. Get CSV matrices, Markdown breakdowns, and per-region summaries. No dependencies beyond Azure CLI.
 
@@ -13,8 +13,8 @@ Point them at Europe, US, Asia Pacific, UK, Canada, Middle East, Africa, South A
 
 Azure has more than 300 resource providers and rolls services out to new regions constantly. The "Azure products by region" marketing page is human-friendly but doesn't map cleanly to ARM namespaces, and it's a hassle to scrape.
 
+- **`Compare-AzureRegionCoverage.ps1`** answers *"where can I run **my** workload?"* — it inventories what you actually have deployed (via Azure Resource Graph) and cross-references against the catalog. Perfect for DR planning, capacity constraints, sovereignty requirements, or "we want to expand to region X — will everything still work?"
 - **`Get-AzureServicesByRegion.ps1`** answers *"what's available where?"* — an exhaustive catalog built from the authoritative ARM provider metadata (`az account list-locations` + `az provider list`).
-- **`Compare-AzureRegionCoverage.ps1`** answers *"where can I run **my** workload?"* — it inventories what you actually have deployed (via Azure Resource Graph) and cross-references against the catalog.
 
 ## Quick start
 
@@ -22,24 +22,33 @@ Azure has more than 300 resource providers and rolls services out to new regions
 az login
 git clone https://github.com/prbeegala/AzureServicesByRegion.git
 cd AzureServicesByRegion
-./Get-AzureServicesByRegion.ps1
+
+# Score every European region against your current subscription's North Europe deployments.
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope
 ```
 
-Default run enumerates **Europe** using your current subscription and writes 5 files to the current directory.
+Prefer to see it in action without touching your subscription? The repo ships with synthetic sample inventories:
+
+```powershell
+# Uses only the shipped synthetic inventory — no Azure resources queried.
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope `
+    -InventoryFile ./outputs/coverage/northeurope/example-inventory.csv `
+    -OutputDirectory ./my-analysis
+```
 
 ## See it before you run it
 
-Sample outputs are checked in under [`outputs/`](./outputs) so you can inspect the file shapes and the friendly-name mapping before running anything:
+Sample outputs are checked in under [`outputs/`](./outputs) so you can inspect the file shapes and rankings before running anything:
 
-- **`Get-AzureServicesByRegion`** snapshots:
-  - [`outputs/services-by-region/europe/`](./outputs/services-by-region/europe) — 17 regions, West Europe (195 providers) → Denmark East (54)
-  - [`outputs/services-by-region/us/`](./outputs/services-by-region/us) — 20 regions, East US leads with 209 providers
-  - [`outputs/services-by-region/asia-pacific/`](./outputs/services-by-region/asia-pacific) — 20 regions, Australia East leads with 167 providers
 - **`Compare-AzureRegionCoverage`** examples (four different source regions):
   - [`outputs/coverage/northeurope/`](./outputs/coverage/northeurope) — Europe geography (17 regions), 40 types, 573 instances. Includes validate-mode deep dives.
   - [`outputs/coverage/eastus/`](./outputs/coverage/eastus) — US geography (9 customer regions), 54 types, 1,327 instances.
   - [`outputs/coverage/southeastasia/`](./outputs/coverage/southeastasia) — Asia Pacific (18 regions), 37 types, 453 instances.
   - [`outputs/coverage/uksouth/`](./outputs/coverage/uksouth) — UK (2 regions) + Europe fallback, 37 types, 508 instances.
+- **`Get-AzureServicesByRegion`** snapshots:
+  - [`outputs/services-by-region/europe/`](./outputs/services-by-region/europe) — 17 regions, West Europe (195 providers) → Denmark East (54).
+  - [`outputs/services-by-region/us/`](./outputs/services-by-region/us) — 20 regions, East US leads with 209 providers.
+  - [`outputs/services-by-region/asia-pacific/`](./outputs/services-by-region/asia-pacific) — 20 regions, Australia East leads with 167 providers.
 - [`outputs/README.md`](./outputs/README.md) — full ranking tables and notes on Stage / EUAP / Jio regions.
 
 ## Prerequisites
@@ -48,44 +57,179 @@ Sample outputs are checked in under [`outputs/`](./outputs) so you can inspect t
 - **PowerShell 5.1+** (Windows) or **PowerShell 7+** (Windows / macOS / Linux)
 - Signed in: `az login`
 
-The script is **read-only** — it only reads provider and location metadata. It does not create, modify, or delete any Azure resources.
-
-## Usage
-
-```powershell
-# Europe, current subscription, current directory
-./Get-AzureServicesByRegion.ps1
-
-# Any geography
-./Get-AzureServicesByRegion.ps1 -GeographyGroup 'US' -OutputDirectory ./out
-./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Asia Pacific' -OutputDirectory ./out
-
-# Use a specific subscription
-./Get-AzureServicesByRegion.ps1 `
-    -GeographyGroup 'UK' `
-    -SubscriptionId 00000000-0000-0000-0000-000000000000 `
-    -OutputDirectory ./out
-
-# List the geography groups + regions your subscription can see
-./Get-AzureServicesByRegion.ps1 -List
-
-# Raw only (skip friendly-name mapping)
-./Get-AzureServicesByRegion.ps1 -SkipFriendly
-
-# Full help
-Get-Help ./Get-AzureServicesByRegion.ps1 -Detailed
-```
-
-**macOS / Linux (PowerShell 7):**
-
-```bash
-pwsh ./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Europe' -OutputDirectory ./out
-```
+Both scripts are **read-only** — they only read provider metadata and, for the coverage script, query Azure Resource Graph. Neither creates, modifies, or deletes any Azure resources.
 
 **Windows: "cannot be loaded because running scripts is disabled":**
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+**macOS / Linux (PowerShell 7):**
+
+```bash
+pwsh ./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope
+```
+
+---
+
+# Compare-AzureRegionCoverage.ps1
+
+Answers two questions:
+
+1. **"Are all the services I use in ``<SourceRegion>`` also available in ``<TargetRegion>``?"** — validate a specific failover target.
+2. **"Which region in ``<Geography>`` is the best match for what I have deployed in ``<SourceRegion>``?"** — score every candidate region and rank by coverage %.
+
+Uses **Azure Resource Graph** to inventory the *resource types* you have actually deployed in the source region, then cross-references each type against every candidate region's supported locations (from ARM provider metadata).
+
+## Usage
+
+```powershell
+# Rank every European region against my current subscription's North Europe deployments.
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope
+
+# Validate a specific target.
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope -TargetRegion swedencentral
+
+# Any geography.
+./Compare-AzureRegionCoverage.ps1 -SourceRegion eastus -GeographyGroup 'US'
+./Compare-AzureRegionCoverage.ps1 -SourceRegion southeastasia -GeographyGroup 'Asia Pacific'
+
+# Offline / what-if analysis — no Azure Resource Graph queries.
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope `
+    -InventoryFile ./outputs/coverage/northeurope/example-inventory.csv `
+    -OutputDirectory ./out
+
+# Full help.
+Get-Help ./Compare-AzureRegionCoverage.ps1 -Detailed
+```
+
+## Scope: subscription vs tenant vs management group
+
+Control *whose* deployments to inventory with `-Scope`:
+
+```powershell
+# 1) Just my current subscription (default).
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope -Scope Subscription
+
+# 2) One or more specific subscriptions.
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope `
+    -Scope Subscription -SubscriptionId <guid1>,<guid2>
+
+# 3) The whole tenant (the tenant of your current az context, or an explicit one).
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope -Scope Tenant
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope -Scope Tenant `
+    -TenantId 00000000-0000-0000-0000-000000000000
+
+# 4) Everything under a management group.
+./Compare-AzureRegionCoverage.ps1 -SourceRegion eastus -GeographyGroup 'US' `
+    -Scope ManagementGroup -ManagementGroupId prod-mg
+```
+
+When you pick `-Scope Tenant` with a `-TenantId` that isn't your current `az` context, the script temporarily switches to a subscription in that tenant (required for Resource Graph auth), runs the query, and **restores your original context on exit** (including on error).
+
+## Parameters
+
+| Parameter | Default | Description |
+| --- | --- | --- |
+| `-SourceRegion` | *(required)* | The region whose deployments you want to reproduce (e.g. `northeurope`). |
+| `-TargetRegion` | *(unset)* | If set, validate this single target region and produce a focused report. |
+| `-GeographyGroup` | `Europe` | When ranking, restrict candidates to this geography group. |
+| `-Scope` | `Subscription` | `Subscription` / `Tenant` / `ManagementGroup`. |
+| `-TenantId` | *(current)* | For `-Scope Tenant`, an explicit tenant ID. |
+| `-SubscriptionId` | *(current)* | For `-Scope Subscription`, one or more sub IDs. |
+| `-ManagementGroupId` | *(unset)* | For `-Scope ManagementGroup`, the MG ID. |
+| `-InventoryFile` | *(unset)* | Load inventory from a CSV instead of querying Resource Graph. Great for what-if analysis. |
+| `-OutputDirectory` | current directory | Where to write outputs. |
+| `-MinResourceCount` | `1` | Ignore resource types with fewer than N instances in source. |
+| `-IncludeStageRegions` | *(off)* | Include Stage / EUAP regions in the candidate list. |
+
+## Outputs
+
+For source region `<src>`:
+
+| File | Purpose |
+| --- | --- |
+| `deployed-types-<src>.csv` | Inventory of resource types found in the source region, with instance counts. |
+| `region-coverage-<src>.csv` | Per-region coverage: `CoveragePercent`, `TypesCovered`, `TypesMissing`, `InstancesMissing`, `MissingTypesList`, and region metadata (paired region, physical location, category). |
+| `region-coverage-<src>.md` | Human-readable report with ranking table + per-region gap details. |
+
+## Example output — real-world Score mode
+
+A tenant with **96 distinct resource types deployed in North Europe** produces (regions sorted by coverage):
+
+```
+Region             Coverage Covered Missing InstancesAtRisk
+northeurope        100%          96       0               0   <-- source
+westeurope         99.0%         95       1               1
+swedencentral      97.9%         94       2               2
+francecentral      96.9%         93       3               3
+germanywestcentral 96.9%         93       3               3
+norwayeast         96.9%         93       3               3
+switzerlandnorth   96.9%         93       3               3
+italynorth         92.7%         89       7             244
+polandcentral      92.7%         89       7             244
+spaincentral       92.7%         89       7             244
+austriaeast        82.3%         79      17             414
+belgiumcentral     72.9%         70      26             980
+denmarkeast        72.9%         70      26             980
+switzerlandwest    37.5%         36      60           6,936
+francesouth        31.2%         30      66           8,617
+germanynorth       26.0%         25      71           8,668
+norwaywest         26.0%         25      71           8,660
+```
+
+The Markdown report drills into **which resource types are missing in each region**, with instance counts, so you can quickly see what would need re-architecting (or SKU substitution) to move.
+
+## How it works
+
+1. Inventory the source region's resource types via Azure Resource Graph:
+   ```kusto
+   Resources
+   | where location =~ '<SourceRegion>'
+   | summarize count() by type
+   ```
+2. Load the ARM provider catalog (`az provider list`) and index every `namespace/resourceType` to its supported locations.
+3. For each candidate region, walk the inventory: each deployed type is either **covered** (target region supports it, or it's global), **missing**, or **unknown** (not in provider metadata — rare edge case).
+4. Compute `coverage % = covered / (covered + missing)` and rank.
+
+## Caveats
+
+- Coverage at the resource-type level is a necessary condition, not a sufficient one. Regional SKU availability, quota, and capacity may still constrain deployment — verify with `az vm list-skus -l <region>` and the [Retail Prices API](https://learn.microsoft.com/rest/api/cost-management/retail-prices/azure-retail-prices).
+- Resource Graph reflects your current permissions. Subscriptions you don't have Reader on won't appear.
+- Very fresh deployments (created within ~5 minutes) may not appear in Resource Graph yet.
+- Global resources (`location = 'global'`) are naturally covered by every candidate.
+
+---
+
+# Get-AzureServicesByRegion.ps1
+
+Produces an exhaustive catalog of which Azure resource providers (services) are available in each region of a chosen geography, with friendly service names and categories.
+
+## Usage
+
+```powershell
+# Europe, current subscription, current directory.
+./Get-AzureServicesByRegion.ps1
+
+# Any geography.
+./Get-AzureServicesByRegion.ps1 -GeographyGroup 'US' -OutputDirectory ./out
+./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Asia Pacific' -OutputDirectory ./out
+
+# Use a specific subscription (see 'What is -SubscriptionId for?' below).
+./Get-AzureServicesByRegion.ps1 `
+    -GeographyGroup 'UK' `
+    -SubscriptionId 00000000-0000-0000-0000-000000000000 `
+    -OutputDirectory ./out
+
+# List the geography groups + regions your subscription can see.
+./Get-AzureServicesByRegion.ps1 -List
+
+# Raw only (skip friendly-name mapping).
+./Get-AzureServicesByRegion.ps1 -SkipFriendly
+
+# Full help.
+Get-Help ./Get-AzureServicesByRegion.ps1 -Detailed
 ```
 
 ## Parameters
@@ -155,7 +299,7 @@ Providers are grouped into human-friendly categories: **Compute, Storage, Databa
 
 ## Caveats
 
-- Region availability at the *provider* level is a first cut. Some resource types are more restricted than others; for the true unit of availability inspect `resourceTypes[].locations` directly (the raw CSV preserves this at the provider level, but you can extend the script to keep the per-type view).
+- Region availability at the *provider* level is a first cut. Some resource types are more restricted than others; for the true unit of availability inspect `resourceTypes[].locations` directly.
 - Some SKUs are further gated by capacity / quota per region. Verify with `az vm list-skus -l <region>` or the [Retail Prices API](https://learn.microsoft.com/rest/api/cost-management/retail-prices/azure-retail-prices) before committing to a design.
 - Preview / hidden providers may not appear until you register them (`az provider register --namespace <ns>`).
 - The friendly-name mapping is a best-effort translation. `Namespace` is the authoritative identifier — treat `ServiceName` as human-readable metadata.
@@ -173,123 +317,6 @@ PRs welcome — see [Contributing](#contributing).
 
 ---
 
-# Compare-AzureRegionCoverage.ps1
-
-Answers two questions:
-
-1. **"Are all the services I use in ``<SourceRegion>`` also available in ``<TargetRegion>``?"** — validate a specific failover target.
-2. **"Which region in ``<Geography>`` is the best match for what I have deployed in ``<SourceRegion>``?"** — score every candidate region and rank by coverage %.
-
-Uses **Azure Resource Graph** to inventory the *resource types* you have actually deployed in the source region, then cross-references each type against every candidate region's supported locations (from ARM provider metadata).
-
-## Quick start
-
-```powershell
-# Rank every European region against my current subscription's North Europe deployments.
-./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope
-
-# Validate a specific target.
-./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope -TargetRegion swedencentral
-```
-
-## Scope: subscription vs tenant vs management group
-
-You can control *whose* deployments to inventory with `-Scope`:
-
-```powershell
-# 1) Just my current subscription (default).
-./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope -Scope Subscription
-
-# 2) One or more specific subscriptions.
-./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope `
-    -Scope Subscription -SubscriptionId <guid1>,<guid2>
-
-# 3) The whole tenant (the tenant of your current az context, or an explicit one).
-./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope -Scope Tenant
-./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope -Scope Tenant `
-    -TenantId 00000000-0000-0000-0000-000000000000
-
-# 4) Everything under a management group.
-./Compare-AzureRegionCoverage.ps1 -SourceRegion eastus -GeographyGroup 'US' `
-    -Scope ManagementGroup -ManagementGroupId prod-mg
-```
-
-When you pick `-Scope Tenant` with a `-TenantId` that isn't your current `az` context, the script temporarily switches to a subscription in that tenant (required for Resource Graph auth), runs the query, and **restores your original context on exit** (including on error).
-
-## Parameters
-
-| Parameter | Default | Description |
-| --- | --- | --- |
-| `-SourceRegion` | *(required)* | The region whose deployments you want to reproduce (e.g. `northeurope`). |
-| `-TargetRegion` | *(unset)* | If set, validate this single target region and produce a focused report. |
-| `-GeographyGroup` | `Europe` | When ranking, restrict candidates to this geography group. |
-| `-Scope` | `Subscription` | `Subscription` / `Tenant` / `ManagementGroup`. |
-| `-TenantId` | *(current)* | For `-Scope Tenant`, an explicit tenant ID. |
-| `-SubscriptionId` | *(current)* | For `-Scope Subscription`, one or more sub IDs. |
-| `-ManagementGroupId` | *(unset)* | For `-Scope ManagementGroup`, the MG ID. |
-| `-OutputDirectory` | current directory | Where to write outputs. |
-| `-MinResourceCount` | `1` | Ignore resource types with fewer than N instances in source. |
-| `-IncludeStageRegions` | *(off)* | Include Stage / EUAP regions in the candidate list. |
-
-## Outputs
-
-For source region `<src>`:
-
-| File | Purpose |
-| --- | --- |
-| `deployed-types-<src>.csv` | Inventory of resource types found in the source region, with instance counts. |
-| `region-coverage-<src>.csv` | Per-region coverage: `CoveragePercent`, `TypesCovered`, `TypesMissing`, `InstancesMissing`, `MissingTypesList`, and region metadata (paired region, physical location, category). |
-| `region-coverage-<src>.md` | Human-readable report with ranking table + per-region gap details. |
-
-## Example output — real-world Score mode
-
-A tenant with **96 distinct resource types deployed in North Europe** produces (regions sorted by coverage):
-
-```
-Region             Coverage Covered Missing InstancesAtRisk
-northeurope        100%          96       0               0   <-- source
-westeurope         99.0%         95       1               1
-swedencentral      97.9%         94       2               2
-francecentral      96.9%         93       3               3
-germanywestcentral 96.9%         93       3               3
-norwayeast         96.9%         93       3               3
-switzerlandnorth   96.9%         93       3               3
-italynorth         92.7%         89       7             244
-polandcentral      92.7%         89       7             244
-spaincentral       92.7%         89       7             244
-austriaeast        82.3%         79      17             414
-belgiumcentral     72.9%         70      26             980
-denmarkeast        72.9%         70      26             980
-switzerlandwest    37.5%         36      60           6,936
-francesouth        31.2%         30      66           8,617
-germanynorth       26.0%         25      71           8,668
-norwaywest         26.0%         25      71           8,660
-```
-
-The Markdown report drills into **which resource types are missing in each region**, with instance counts, so you can quickly see what would need re-architecting (or SKU substitution) to move.
-
-## How it works
-
-1. Inventory the source region's resource types via Azure Resource Graph:
-   ```kusto
-   Resources
-   | where location =~ '<SourceRegion>'
-   | summarize count() by type
-   ```
-2. Load the ARM provider catalog (`az provider list`) and index every `namespace/resourceType` to its supported locations.
-3. For each candidate region, walk the inventory: each deployed type is either **covered** (target region supports it, or it's global), **missing**, or **unknown** (not in provider metadata — rare edge case).
-4. Compute `coverage % = covered / (covered + missing)` and rank.
-
-## Caveats
-
-- Coverage at the resource-type level is a necessary condition, not a sufficient one. Regional SKU availability, quota, and capacity may still constrain deployment — verify with `az vm list-skus -l <region>` and the [Retail Prices API](https://learn.microsoft.com/rest/api/cost-management/retail-prices/azure-retail-prices).
-- Resource Graph reflects your current permissions. Subscriptions you don't have Reader on won't appear.
-- Very fresh deployments (created within ~5 minutes) may not appear in Resource Graph yet.
-- The tool is read-only — Resource Graph queries + ARM metadata reads. It does not modify any resources.
-- Global resources (`location = 'global'`) are naturally covered by every candidate.
-
----
-
 ## Contributing
 
 Contributions welcome, especially:
@@ -300,7 +327,7 @@ Contributions welcome, especially:
 - **Per-resource-type breakdown** — a `-Granularity ResourceType` mode.
 - **Alternative auth** — Az PowerShell module fallback, service principal support.
 
-Open an issue or PR. Keep the script standalone (single file, no external modules) unless there's a strong reason.
+Open an issue or PR. Keep the scripts standalone (single file each, no external modules) unless there's a strong reason.
 
 ## License
 

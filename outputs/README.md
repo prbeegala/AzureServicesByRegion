@@ -8,115 +8,22 @@ yourself. Generated on **2026-07-08**.
 
 ```
 outputs/
-├── services-by-region/      <-- Get-AzureServicesByRegion.ps1 snapshots
-│   ├── europe/              (catalog of providers x regions per geography)
-│   ├── us/
-│   └── asia-pacific/
-└── coverage/                <-- Compare-AzureRegionCoverage.ps1 examples
-    ├── northeurope/         (one folder per source region)
-    ├── eastus/
-    ├── southeastasia/
-    └── uksouth/
-        └── europe-fallback/ (cross-geo scoring)
+├── coverage/                <-- Compare-AzureRegionCoverage.ps1 examples
+│   ├── northeurope/         (one folder per source region)
+│   ├── eastus/
+│   ├── southeastasia/
+│   └── uksouth/
+│       └── europe-fallback/ (cross-geo scoring)
+└── services-by-region/      <-- Get-AzureServicesByRegion.ps1 snapshots
+    ├── europe/              (catalog of providers x regions per geography)
+    ├── us/
+    └── asia-pacific/
 ```
 
-- **`services-by-region/`** — catalog view: which Azure resource providers are
-  available in each region of a chosen geography.
 - **`coverage/`** — coverage view: given a synthetic workload in a source
   region, which other regions can host it (and what's missing).
-
----
-
-# `services-by-region/` — regional catalogs
-
-To regenerate against a live Azure subscription:
-
-```powershell
-./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Europe' -OutputDirectory ./outputs/services-by-region/europe
-./Get-AzureServicesByRegion.ps1 -GeographyGroup 'US'     -OutputDirectory ./outputs/services-by-region/us
-./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Asia Pacific' -OutputDirectory ./outputs/services-by-region/asia-pacific
-```
-
-Every geography snapshot contains the same 5 files:
-
-| File | Purpose |
-| --- | --- |
-| `services-by-<geo>-region.csv` | Raw matrix of every provider × region, cells `yes` / `no` / `global`. |
-| `services-by-<geo>-region.md` | Per-region **Available / Not available** lists (namespaces only). |
-| `services-by-<geo>-region-friendly.csv` | Same matrix with curated `ServiceName` and `Category`. |
-| `services-by-<geo>-region-friendly.md` | Per-region breakdown grouped by category, using friendly names. |
-| `<geo>-region-summary.csv` | Per-region counts of Available / Unavailable / Global providers. |
-
-Total providers observed: **318** (42 global, 276 region-scoped).
-
-## Europe (17 regions) — [`outputs/services-by-region/europe/`](./services-by-region/europe)
-
-| Rank | Region | Physical | Available | Not available |
-| ---: | --- | --- | ---: | ---: |
-| 1 | West Europe | Netherlands | 195 | 81 |
-| 2 | North Europe | Ireland | 183 | 93 |
-| 3 | Germany West Central | Frankfurt | 143 | 133 |
-| 4 | Sweden Central | Gävle | 142 | 134 |
-| 5 | France Central | Paris | 132 | 144 |
-| 6 | Switzerland North | Zurich | 126 | 150 |
-| 7 | Norway East | Norway | 119 | 157 |
-| 8 | Italy North | Milan | 110 | 166 |
-| 9 | Poland Central | Warsaw | 89 | 187 |
-| 10 | Spain Central | Madrid | 88 | 188 |
-| 11 | Switzerland West | Geneva | 82 | 194 |
-| 12 | France South | Marseille | 65 | 211 |
-| 13 | Norway West | Norway | 61 | 215 |
-| 14 | Austria East | Vienna | 61 | 215 |
-| 15 | Germany North | Berlin | 59 | 217 |
-| 16 | Belgium Central | Brussels | 57 | 219 |
-| 17 | Denmark East | Copenhagen | 54 | 222 |
-
-## United States (20 regions) — [`outputs/services-by-region/us/`](./services-by-region/us)
-
-| Rank | Region | Physical | Available | Not available |
-| ---: | --- | --- | ---: | ---: |
-| 1 | East US | Virginia | 209 | 67 |
-| 2 | West US 2 | Washington | 180 | 96 |
-| 3 | East US 2 | Virginia | 171 | 105 |
-| 4 | South Central US | Texas | 164 | 112 |
-| 5 | West US | California | 159 | 117 |
-| 6 | Central US | Iowa | 158 | 118 |
-| 7 | West US 3 | Phoenix | 148 | 128 |
-| 8 | West Central US | Wyoming | 139 | 137 |
-| 9 | North Central US | Illinois | 124 | 152 |
-| 10 | East US 2 EUAP | *(early access)* | 64 | 212 |
-| 11 | Central US EUAP | *(early access)* | 55 | 221 |
-| — | Stage / STG regions (8) | *(internal)* | 0 | 276 |
-
-**Note:** *Stage* and *STG* regions are internal Microsoft testing regions and
-are not customer-selectable. *EUAP* (Early Update Access Program) regions are
-where new features roll out first — customers with EUAP access can use them.
-That's why they show 0 or low provider counts.
-
-## Asia Pacific (20 regions) — [`outputs/services-by-region/asia-pacific/`](./services-by-region/asia-pacific)
-
-| Rank | Region | Physical | Available | Not available |
-| ---: | --- | --- | ---: | ---: |
-| 1 | Australia East | New South Wales | 167 | 109 |
-| 2 | Southeast Asia | Singapore | 163 | 113 |
-| 3 | Japan East | Tokyo, Saitama | 146 | 130 |
-| 4 | Central India | Pune | 141 | 135 |
-| 5 | East Asia | Hong Kong | 132 | 144 |
-| 6 | Korea Central | Seoul | 129 | 147 |
-| 7 | Australia Southeast | Victoria | 122 | 154 |
-| 8 | South India | Chennai | 115 | 161 |
-| 9 | Japan West | Osaka | 114 | 162 |
-| 10 | Korea South | Busan | 89 | 187 |
-| 11 | Australia Central | Canberra | 81 | 195 |
-| 12 | Malaysia West | Kuala Lumpur | 76 | 200 |
-| 13 | Indonesia Central | Jakarta | 71 | 205 |
-| 14 | New Zealand North | Auckland | 70 | 206 |
-| 15 | West India | Mumbai | 69 | 207 |
-| 16 | Australia Central 2 | Canberra | 54 | 222 |
-| — | Stage / Jio India regions (4) | *(internal / partner)* | 0 | 276 |
-
-**Note:** *Stage* regions are internal. *Jio India* regions are operated by
-Jio Platforms and require a separate partnership to consume.
+- **`services-by-region/`** — catalog view: which Azure resource providers are
+  available in each region of a chosen geography.
 
 ---
 
@@ -268,6 +175,101 @@ non-Jio subscriptions.
 **Notable finding:** UK has only 2 regions, so for real DR planning you often
 have to cross into Europe. West Europe offers 100% coverage for this
 synthetic workload, making it the natural cross-geo pair.
+
+---
+
+# `services-by-region/` — regional catalogs
+
+To regenerate against a live Azure subscription:
+
+```powershell
+./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Europe' -OutputDirectory ./outputs/services-by-region/europe
+./Get-AzureServicesByRegion.ps1 -GeographyGroup 'US'     -OutputDirectory ./outputs/services-by-region/us
+./Get-AzureServicesByRegion.ps1 -GeographyGroup 'Asia Pacific' -OutputDirectory ./outputs/services-by-region/asia-pacific
+```
+
+Every geography snapshot contains the same 5 files:
+
+| File | Purpose |
+| --- | --- |
+| `services-by-<geo>-region.csv` | Raw matrix of every provider × region, cells `yes` / `no` / `global`. |
+| `services-by-<geo>-region.md` | Per-region **Available / Not available** lists (namespaces only). |
+| `services-by-<geo>-region-friendly.csv` | Same matrix with curated `ServiceName` and `Category`. |
+| `services-by-<geo>-region-friendly.md` | Per-region breakdown grouped by category, using friendly names. |
+| `<geo>-region-summary.csv` | Per-region counts of Available / Unavailable / Global providers. |
+
+Total providers observed: **318** (42 global, 276 region-scoped).
+
+## Europe (17 regions) — [`outputs/services-by-region/europe/`](./services-by-region/europe)
+
+| Rank | Region | Physical | Available | Not available |
+| ---: | --- | --- | ---: | ---: |
+| 1 | West Europe | Netherlands | 195 | 81 |
+| 2 | North Europe | Ireland | 183 | 93 |
+| 3 | Germany West Central | Frankfurt | 143 | 133 |
+| 4 | Sweden Central | Gävle | 142 | 134 |
+| 5 | France Central | Paris | 132 | 144 |
+| 6 | Switzerland North | Zurich | 126 | 150 |
+| 7 | Norway East | Norway | 119 | 157 |
+| 8 | Italy North | Milan | 110 | 166 |
+| 9 | Poland Central | Warsaw | 89 | 187 |
+| 10 | Spain Central | Madrid | 88 | 188 |
+| 11 | Switzerland West | Geneva | 82 | 194 |
+| 12 | France South | Marseille | 65 | 211 |
+| 13 | Norway West | Norway | 61 | 215 |
+| 14 | Austria East | Vienna | 61 | 215 |
+| 15 | Germany North | Berlin | 59 | 217 |
+| 16 | Belgium Central | Brussels | 57 | 219 |
+| 17 | Denmark East | Copenhagen | 54 | 222 |
+
+## United States (20 regions) — [`outputs/services-by-region/us/`](./services-by-region/us)
+
+| Rank | Region | Physical | Available | Not available |
+| ---: | --- | --- | ---: | ---: |
+| 1 | East US | Virginia | 209 | 67 |
+| 2 | West US 2 | Washington | 180 | 96 |
+| 3 | East US 2 | Virginia | 171 | 105 |
+| 4 | South Central US | Texas | 164 | 112 |
+| 5 | West US | California | 159 | 117 |
+| 6 | Central US | Iowa | 158 | 118 |
+| 7 | West US 3 | Phoenix | 148 | 128 |
+| 8 | West Central US | Wyoming | 139 | 137 |
+| 9 | North Central US | Illinois | 124 | 152 |
+| 10 | East US 2 EUAP | *(early access)* | 64 | 212 |
+| 11 | Central US EUAP | *(early access)* | 55 | 221 |
+| — | Stage / STG regions (8) | *(internal)* | 0 | 276 |
+
+**Note:** *Stage* and *STG* regions are internal Microsoft testing regions and
+are not customer-selectable. *EUAP* (Early Update Access Program) regions are
+where new features roll out first — customers with EUAP access can use them.
+That's why they show 0 or low provider counts.
+
+## Asia Pacific (20 regions) — [`outputs/services-by-region/asia-pacific/`](./services-by-region/asia-pacific)
+
+| Rank | Region | Physical | Available | Not available |
+| ---: | --- | --- | ---: | ---: |
+| 1 | Australia East | New South Wales | 167 | 109 |
+| 2 | Southeast Asia | Singapore | 163 | 113 |
+| 3 | Japan East | Tokyo, Saitama | 146 | 130 |
+| 4 | Central India | Pune | 141 | 135 |
+| 5 | East Asia | Hong Kong | 132 | 144 |
+| 6 | Korea Central | Seoul | 129 | 147 |
+| 7 | Australia Southeast | Victoria | 122 | 154 |
+| 8 | South India | Chennai | 115 | 161 |
+| 9 | Japan West | Osaka | 114 | 162 |
+| 10 | Korea South | Busan | 89 | 187 |
+| 11 | Australia Central | Canberra | 81 | 195 |
+| 12 | Malaysia West | Kuala Lumpur | 76 | 200 |
+| 13 | Indonesia Central | Jakarta | 71 | 205 |
+| 14 | New Zealand North | Auckland | 70 | 206 |
+| 15 | West India | Mumbai | 69 | 207 |
+| 16 | Australia Central 2 | Canberra | 54 | 222 |
+| — | Stage / Jio India regions (4) | *(internal / partner)* | 0 | 276 |
+
+**Note:** *Stage* regions are internal. *Jio India* regions are operated by
+Jio Platforms and require a separate partnership to consume.
+
+---
 
 ## What "global" means
 
