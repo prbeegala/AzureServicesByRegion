@@ -1,0 +1,3 @@
+"RegionName","DisplayName","Physical","RegionCategory","PairedWith","CoveragePercent","TypesCovered","TypesMissing","InstancesMissing","TypesUnknown","MissingTypesList","UnknownTypesList","IsSource"
+"uksouth","UK South","London","Recommended","ukwest","97.3","36","1","8","0","microsoft.web/staticsites (8)","","True"
+"ukwest","UK West","Cardiff","Other","uksouth","94.6","35","2","9","0","microsoft.web/staticsites (8); microsoft.dashboard/grafana (1)","","False"

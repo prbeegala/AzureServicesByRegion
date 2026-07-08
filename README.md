@@ -35,8 +35,11 @@ Sample outputs are checked in under [`outputs/`](./outputs) so you can inspect t
   - [`outputs/europe/`](./outputs/europe) — 17 regions, West Europe (195 providers) → Denmark East (54)
   - [`outputs/us/`](./outputs/us) — 20 regions, East US leads with 209 providers
   - [`outputs/asia-pacific/`](./outputs/asia-pacific) — 20 regions, Australia East leads with 167 providers
-- **`Compare-AzureRegionCoverage`** example:
-  - [`outputs/coverage-example-northeurope/`](./outputs/coverage-example-northeurope) — score + validate modes against a **synthetic** 40-type workload (feed the CSV back in with `-InventoryFile` for your own what-if runs).
+- **`Compare-AzureRegionCoverage`** examples (four different source regions):
+  - [`outputs/coverage-example-northeurope/`](./outputs/coverage-example-northeurope) — Europe geography (17 regions), 40 types, 573 instances. Includes validate-mode deep dives.
+  - [`outputs/coverage-example-eastus/`](./outputs/coverage-example-eastus) — US geography (9 customer regions), 54 types, 1,327 instances.
+  - [`outputs/coverage-example-southeastasia/`](./outputs/coverage-example-southeastasia) — Asia Pacific (18 regions), 37 types, 453 instances.
+  - [`outputs/coverage-example-uksouth/`](./outputs/coverage-example-uksouth) — UK (2 regions) + Europe fallback, 37 types, 508 instances.
 - [`outputs/README.md`](./outputs/README.md) — full ranking tables and notes on Stage / EUAP / Jio regions.
 
 ## Prerequisites
@@ -94,6 +97,16 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 | `-OutputDirectory` | current directory | Where to write outputs. Created if missing. |
 | `-SkipFriendly` | *(off)* | Skip the friendly-name outputs. |
 | `-List` | *(off)* | Print geography groups + regions and exit. No files written. |
+
+### What is `-SubscriptionId` for?
+
+`Get-AzureServicesByRegion.ps1` only reads **metadata** — `az account list-locations` and `az provider list`. It does not enumerate any of your deployed resources. So `-SubscriptionId` is really doing three things:
+
+1. **Picks the tenant.** If you're `az login`-ed to multiple tenants, the sub you pass determines which tenant the metadata queries run against. Different tenants may see different region lists (e.g., **EUAP** preview regions are only visible to enrolled subs).
+2. **Controls the `Registration` column.** The `Registration` value (`Registered` / `NotRegistered`) is per-subscription. Region availability of each resource type is identical across all subs — that's a platform-wide fact.
+3. **Reproducibility.** Passing it explicitly means the run doesn't silently pick up a different context if someone `az account set`s later.
+
+For a plain "what services are in what regions" view, any active subscription in the target tenant works.
 
 ## Outputs
 
