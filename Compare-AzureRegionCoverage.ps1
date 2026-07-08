@@ -28,6 +28,13 @@
     Region name (e.g. 'northeurope') whose deployments you want to reproduce.
     Case-insensitive. Required.
 
+.PARAMETER InventoryFile
+    Path to a CSV with columns 'ResourceType' and 'Instances' (matching the
+    'deployed-types-<src>.csv' output shape). When set, Azure Resource Graph
+    is NOT queried and this file is used as the inventory. Useful for offline
+    what-if analysis or working from a pre-computed inventory.
+    Overrides -Scope, -SubscriptionId, -ManagementGroupId, -TenantId.
+
 .PARAMETER TargetRegion
     (Validate mode) Single region to check against. When set, other regions
     are ignored and the report focuses on this target.
@@ -86,6 +93,11 @@
     ./Compare-AzureRegionCoverage.ps1 -SourceRegion eastus -GeographyGroup 'US' `
         -Scope ManagementGroup -ManagementGroupId prod-mg -OutputDirectory ./out
 
+.EXAMPLE
+    ./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope `
+        -InventoryFile ./example-inventory.csv -OutputDirectory ./out
+    # Offline / synthetic: uses the CSV as-is, does not query Resource Graph.
+
 .NOTES
     Requires: Azure CLI ('az') with 'resource-graph' extension, PowerShell 5.1+.
     Read-only: only queries Resource Graph and ARM metadata.
@@ -113,12 +125,20 @@ param(
 
     [string]$OutputDirectory = (Get-Location).Path,
 
+    [string]$InventoryFile,
+
     [int]$MinResourceCount = 1,
 
     [switch]$IncludeStageRegions
 )
 
 $ErrorActionPreference = 'Stop'
+
+# Force UTF-8 so region physical location names with accented characters (e.g. "Gävle") survive.
+try {
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    $OutputEncoding = [System.Text.Encoding]::UTF8
+} catch { }
 
 # ------------------------------------------------------------------ helpers --
 
@@ -286,8 +306,31 @@ $acct = Test-Prereq
 Write-Host ("Tenant:       {0}" -f $acct.tenantId) -ForegroundColor Green
 Write-Host ("Identity:     {0}" -f $acct.user.name) -ForegroundColor Green
 
-# ---- Resolve scope --------------------------------------------------------
-switch ($Scope) {
+# ---- Inventory: from file (offline) or from Azure Resource Graph -----------
+$deployed = $null
+if ($InventoryFile) {
+    if (-not (Test-Path $InventoryFile)) { throw "InventoryFile '$InventoryFile' not found." }
+    Write-Host ("Scope:        Inventory loaded from file: {0}" -f (Resolve-Path $InventoryFile).Path) -ForegroundColor Green
+    $rows = Import-Csv $InventoryFile
+    $expected = @('ResourceType','Instances')
+    foreach ($col in $expected) {
+        if (-not ($rows[0].PSObject.Properties.Name -contains $col)) {
+            throw "InventoryFile must have columns: $($expected -join ', '). Got: $($rows[0].PSObject.Properties.Name -join ', ')"
+        }
+    }
+    $deployed = $rows | ForEach-Object {
+        $n = [int]$_.Instances
+        if ($n -ge $MinResourceCount) {
+            [pscustomobject]@{ type = $_.ResourceType.Trim(); c = $n }
+        }
+    } | Where-Object { $_ }
+    if (-not $deployed -or $deployed.Count -eq 0) {
+        throw "No usable rows in '$InventoryFile' after applying -MinResourceCount $MinResourceCount."
+    }
+}
+else {
+    # ---- Resolve scope ----------------------------------------------------
+    switch ($Scope) {
     'Subscription' {
         if (-not $SubscriptionId -or $SubscriptionId.Count -eq 0) {
             # Fall back to current 'az' subscription.
@@ -323,19 +366,21 @@ switch ($Scope) {
         }
         Write-Host ("Scope:        Management group: {0}" -f $ManagementGroupId) -ForegroundColor Green
     }
+  }
+
+    # ---- Query Azure Resource Graph for source region inventory ---------
+    Write-Host ("`nInventorying resource types in '{0}' via Azure Resource Graph ..." -f $SourceRegion) -ForegroundColor Cyan
+    $subsForQuery = switch ($Scope) {
+        'Subscription' { $SubscriptionId }
+        'Tenant'       { $script:TenantSubs }
+        default        { $null }
+    }
+    $deployed = Get-DeployedTypes -Region $SourceRegion -ScopeKind $Scope -SubIds $subsForQuery -MgId $ManagementGroupId -MinCount $MinResourceCount
+    if (-not $deployed -or $deployed.Count -eq 0) {
+        throw "No resources found in region '$SourceRegion' within the chosen scope. Check the region name and your scope."
+    }
 }
 
-# ---- 1. Inventory source region -------------------------------------------
-Write-Host ("`nInventorying resource types in '{0}' ..." -f $SourceRegion) -ForegroundColor Cyan
-$subsForQuery = switch ($Scope) {
-    'Subscription' { $SubscriptionId }
-    'Tenant'       { $script:TenantSubs }
-    default        { $null }
-}
-$deployed = Get-DeployedTypes -Region $SourceRegion -ScopeKind $Scope -SubIds $subsForQuery -MgId $ManagementGroupId -MinCount $MinResourceCount
-if (-not $deployed -or $deployed.Count -eq 0) {
-    throw "No resources found in region '$SourceRegion' within the chosen scope. Check the region name and your scope."
-}
 $srcSlug = ConvertTo-RegionSlug $SourceRegion
 $totalInstances = ($deployed | Measure-Object c -Sum).Sum
 Write-Host ("  {0} distinct resource types, {1} total resource instances." -f $deployed.Count, $totalInstances) -ForegroundColor Green
@@ -423,11 +468,15 @@ $md = @()
 $md += "# Region coverage report: source = ``$SourceRegion``"
 $md += ""
 $md += ("Generated: {0:yyyy-MM-dd HH:mm}" -f (Get-Date))
-$md += ("Tenant: ``{0}``" -f $acct.tenantId)
-switch ($Scope) {
-    'Subscription'    { $md += ("Scope: **Subscription** (``{0}``)" -f ($SubscriptionId -join '`, `')) }
-    'Tenant'          { $md += "Scope: **Tenant** (all subscriptions visible to current identity)" }
-    'ManagementGroup' { $md += ("Scope: **Management group** (``{0}``)" -f $ManagementGroupId) }
+if ($InventoryFile) {
+    $md += ("Scope: **Offline inventory** (loaded from ``{0}``)" -f (Split-Path $InventoryFile -Leaf))
+} else {
+    $md += ("Tenant: ``{0}``" -f $acct.tenantId)
+    switch ($Scope) {
+        'Subscription'    { $md += ("Scope: **Subscription** (``{0}``)" -f ($SubscriptionId -join '`, `')) }
+        'Tenant'          { $md += "Scope: **Tenant** (all subscriptions visible to current identity)" }
+        'ManagementGroup' { $md += ("Scope: **Management group** (``{0}``)" -f $ManagementGroupId) }
+    }
 }
 $md += ""
 $md += ("**Inventory:** {0} distinct resource types, {1} instances in ``{2}`` (min instances threshold: {3})." -f $deployed.Count, $totalInstances, $SourceRegion, $MinResourceCount)

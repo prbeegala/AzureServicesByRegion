@@ -1,6 +1,6 @@
 # Azure resource providers by Asia Pacific region
 
-Generated: 2026-07-08 | Subscription: SPECSAVERS-IT-EMEA-RTP-PRD | Providers: 318
+Generated: 2026-07-08 | Subscription: <redacted subscription> | Providers: 318
 Source: az account list-locations + az provider list. 'global' = provider not tied to any region.
 
 ## Australia Central (81 available / 195 not available)

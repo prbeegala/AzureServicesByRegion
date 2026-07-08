@@ -93,6 +93,66 @@ That's why they show 0 or low provider counts.
 **Note:** *Stage* regions are internal. *Jio India* regions are operated by
 Jio Platforms and require a separate partnership to consume.
 
+## `Compare-AzureRegionCoverage.ps1` example — [`outputs/coverage-example-northeurope/`](./coverage-example-northeurope)
+
+Sample outputs for **`Compare-AzureRegionCoverage.ps1`** produced against a
+**synthetic mid-sized enterprise workload** (40 resource types, 573 instances)
+that plausibly lives in North Europe. No real customer data — the inventory is
+hand-crafted so anyone can reproduce or modify it.
+
+Files:
+
+| Path | Purpose |
+| --- | --- |
+| [`example-inventory.csv`](./coverage-example-northeurope/example-inventory.csv) | The synthetic workload profile (ResourceType, Instances). Feed it back into the script with `-InventoryFile` for your own what-if runs. |
+| [`deployed-types-northeurope.csv`](./coverage-example-northeurope/deployed-types-northeurope.csv) | The normalised inventory the script produces from the input. |
+| [`region-coverage-northeurope.csv`](./coverage-example-northeurope/region-coverage-northeurope.csv) | **Score mode** result — every European region ranked by how well it covers the workload. |
+| [`region-coverage-northeurope.md`](./coverage-example-northeurope/region-coverage-northeurope.md) | Human-readable score-mode report with per-region gap details. |
+| [`validate-swedencentral/`](./coverage-example-northeurope/validate-swedencentral) | **Validate mode** result — deep dive on Sweden Central as a specific target. |
+| [`validate-eastus/`](./coverage-example-northeurope/validate-eastus) | **Validate mode** — East US, to illustrate cross-geo validation. |
+
+### Reproduce
+
+```powershell
+# Score every European region
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope `
+    -InventoryFile ./outputs/coverage-example-northeurope/example-inventory.csv `
+    -OutputDirectory ./out
+
+# Validate a single target
+./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope `
+    -InventoryFile ./outputs/coverage-example-northeurope/example-inventory.csv `
+    -TargetRegion swedencentral `
+    -OutputDirectory ./out
+```
+
+### Sample ranking (synthetic workload)
+
+| Rank | Region | Coverage | Missing | Instances at risk |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | West Europe | 100.0% | 0 | 0 |
+| 2 | France Central | 97.5% | 1 | 6 |
+| 3 | Germany West Central | 97.5% | 1 | 6 |
+| 4 | North Europe *(source)* | 97.5% | 1 | 6 |
+| 5 | Norway East | 97.5% | 1 | 6 |
+| 6 | Sweden Central | 97.5% | 1 | 6 |
+| 7 | Switzerland North | 97.5% | 1 | 6 |
+| 8 | Italy North | 95.0% | 2 | 7 |
+| 9 | Poland Central | 92.5% | 3 | 8 |
+| 10 | Spain Central | 92.5% | 3 | 8 |
+| 11 | Austria East | 85.0% | 6 | 23 |
+| 12 | Belgium Central | 80.0% | 8 | 45 |
+| 13 | Denmark East | 80.0% | 8 | 45 |
+| 14 | Switzerland West | 30.0% | 28 | 445 |
+| 15 | France South | 25.0% | 30 | 513 |
+| 16 | Germany North | 20.0% | 32 | 524 |
+| 17 | Norway West | 17.5% | 33 | 526 |
+
+**Notable finding:** even the source region (`northeurope`) shows 97.5% because
+`microsoft.web/staticsites` (Static Web Apps) is region-restricted in ARM to
+West Europe and a few other regions, not North Europe. The tool surfaces this
+kind of subtle regional gap even for regions users assume "have everything".
+
 ## What "global" means
 
 Every geography's summary includes 42 **global providers** — resource

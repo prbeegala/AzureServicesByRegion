@@ -1,0 +1,2 @@
+"RegionName","DisplayName","Physical","RegionCategory","PairedWith","CoveragePercent","TypesCovered","TypesMissing","InstancesMissing","TypesUnknown","MissingTypesList","UnknownTypesList","IsSource"
+"eastus","East US","Virginia","Recommended","westus","97.5","39","1","6","0","microsoft.web/staticsites (6)","","False"

@@ -74,6 +74,12 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
+# Force UTF-8 so region physical location names with accented characters (e.g. "Gävle") survive.
+try {
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    $OutputEncoding = [System.Text.Encoding]::UTF8
+} catch { }
+
 # ------------------------------------------------------------------ helpers --
 
 function Test-Prereq {

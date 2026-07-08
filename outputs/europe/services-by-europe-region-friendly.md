@@ -1,6 +1,6 @@
 # Azure services by Europe region (friendly names)
 
-Generated: 2026-07-08 | Subscription: SPECSAVERS-IT-EMEA-RTP-PRD
+Generated: 2026-07-08 | Subscription: <redacted subscription>
 Service = ARM provider namespace with a curated friendly name and category.
 'global' = provider not tied to any region (Entra, ARM, DNS, ...).
 
