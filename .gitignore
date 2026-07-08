@@ -13,6 +13,7 @@ desktop.ini
 out/
 output/
 tmp/
+_smoketest/
 *.log
 
 # Environment / secrets
