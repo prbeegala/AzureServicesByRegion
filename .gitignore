@@ -1,0 +1,25 @@
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local script output directories (opt-in gitignore)
+out/
+output/
+tmp/
+*.log
+
+# Environment / secrets
+.env
+.envrc
+*.pem
+*.key
+
+# PowerShell module install cache
+Modules/
