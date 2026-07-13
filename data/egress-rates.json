@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Azure bandwidth / peering pricing snapshot. Grounded in the public Azure Bandwidth Pricing page. Numbers are USD per GB unless stated otherwise. Refresh via 'Get-EgressRates.ps1 -Refresh'.",
+  "source_url": "https://azure.microsoft.com/en-us/pricing/details/bandwidth/",
+  "snapshot_date": "2026-07-08",
+  "currency": "USD",
+  "unit": "per_gb",
+  "notes": [
+    "VNet peering ingress and egress are billed at the same rate on both sides of the peering. So a peered pair moving 100 GB in one direction costs 2 x rate x 100 GB.",
+    "In-region VNet peering rate is a flat published rate. Cross-region rates vary by the source (or destination) zone (Zone 1 = US/Europe/CA, Zone 2 = APAC/JP/AU, Zone 3 = SA/India/MEA, Zone 4 = Africa).",
+    "Rates below are the standard published rates. Enterprise Agreement / MCA customers may see negotiated discounts; use these as directional inputs.",
+    "For customer-facing traffic terminated at Front Door / CDN, the internet egress rate applies (not the peering rate).",
+    "Refresh cadence: rates change infrequently (~annual). Snapshot updated in-place when a customer requests a recent baseline."
+  ],
+  "billing_zones": {
+    "zone1": {
+      "regions": ["northeurope","westeurope","uksouth","ukwest","swedencentral","norwayeast","norwaywest","francecentral","francesouth","germanywestcentral","germanynorth","switzerlandnorth","switzerlandwest","italynorth","polandcentral","spaincentral","belgiumcentral","denmarkeast","austriaeast","eastus","eastus2","centralus","northcentralus","southcentralus","westus","westus2","westus3","westcentralus","canadacentral","canadaeast","mexicocentral"],
+      "$comment": "US, Europe, Canada, UK, Mexico. Cheapest egress zone."
+    },
+    "zone2": {
+      "regions": ["southeastasia","eastasia","japaneast","japanwest","koreacentral","koreasouth","malaysiawest","indonesiacentral","australiaeast","australiasoutheast","australiacentral","australiacentral2","newzealandnorth"],
+      "$comment": "Asia Pacific, Japan, Korea, Australia."
+    },
+    "zone3": {
+      "regions": ["centralindia","southindia","westindia","brazilsouth","israelcentral","uaecentral","uaenorth","qatarcentral"],
+      "$comment": "India, South America, Middle East."
+    },
+    "zone4": {
+      "regions": ["southafricanorth","southafricawest"],
+      "$comment": "Africa."
+    }
+  },
+  "vnet_peering": {
+    "in_region": {
+      "rate_per_gb": 0.01,
+      "$comment": "Same-region VNet peering (spoke to hub in the same region). Charged per side, both ingress and egress."
+    },
+    "cross_region_within_zone1": {
+      "rate_per_gb": 0.02,
+      "$comment": "Cross-region VNet peering within Zone 1 (e.g. NE spoke <-> Sweden Central hub)."
+    },
+    "cross_region_zone1_to_zone2": {
+      "rate_per_gb": 0.05,
+      "$comment": "Cross-region VNet peering Zone 1 -> Zone 2 (e.g. WE -> SEA)."
+    },
+    "cross_region_zone1_to_zone3": {
+      "rate_per_gb": 0.08,
+      "$comment": "Cross-region VNet peering Zone 1 -> Zone 3 (e.g. NE -> Central India)."
+    }
+  },
+  "internet_egress_zone1": {
+    "$comment": "Data transfer out to the internet from Zone 1 (Europe, US, UK). Tiered.",
+    "tiers_per_gb": [
+      { "up_to_gb":        5,   "rate": 0.00, "$comment": "First 5 GB/month free" },
+      { "up_to_gb":     10240,   "rate": 0.087, "$comment": "5 GB - 10 TB" },
+      { "up_to_gb":     51200,   "rate": 0.083, "$comment": "10 TB - 50 TB" },
+      { "up_to_gb":    153600,   "rate": 0.070, "$comment": "50 TB - 150 TB" },
+      { "up_to_gb":    512000,   "rate": 0.050, "$comment": "150 TB - 500 TB" }
+    ]
+  },
+  "$comment_derivation": "For the scoring tool the primary signal is the peering rate delta between in-region ($0.01/GB) and cross-region ($0.02-$0.08/GB depending on zones). Score-AzureRegionFit.ps1 uses this delta to compute the incremental egress cost of putting a new workload in the candidate region while keeping the hub/database in the source region."
+}

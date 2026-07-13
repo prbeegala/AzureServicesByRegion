@@ -1,0 +1,58 @@
+Region,AZ,ComputeCapacityChallenge,OfferRestriction,QuotaBacklog,DeploymentRisk,MitigationTimeline,RecommendedAlternative,SourceDate,SourceNote
+# ------------------------------------------------------------------------------
+# Capacity status override template.
+#
+# This CSV is deliberately EMPTY of data. Populate it from the Microsoft Capacity
+# Portal (aka.ms/AzureCapacity) if you have access, or ask your Microsoft account
+# team to share the current constraint status. Fill row-by-row per (Region, AZ)
+# combination, then pass the file path to Score-AzureRegionFit.ps1 via
+# -CapacityStatusFile.
+#
+# Columns (matching the Capacity Portal export shape):
+#   Region                    Azure region shortname (lowercase, no spaces).
+#                             e.g. northeurope, uksouth, swedencentral.
+#   AZ                        'region' for region-level rows, or AZ01/AZ02/AZ03
+#                             for zone-level rows. Include both for full detail.
+#   ComputeCapacityChallenge  One of:
+#                               "Only classic/specialty constraints"
+#                               "Short-term server gap"
+#                               "Short-term server gap (AMD)"
+#                               "Long-term gap for new datacenter(s)"
+#                               "No longer expanding this region"
+#   OfferRestriction          One of:
+#                               "-"  (no restriction)
+#                               "Only new internal & free subscriptions restricted"
+#                               "Only new internal subscriptions restricted"
+#                               "Only new free subscriptions restricted"
+#                               "Only new non-paying subscriptions restricted"
+#                               "Only new internal & free subscriptions restricted (AMD Only)"
+#                               "All new subscriptions restricted"
+#                               "All new subscriptions restricted (AMD Only)"
+#                               "All new subscriptions restricted by policy, for BCDR only"
+#                               "All new subscriptions restricted by policy, region retiring"
+#                               "All new subscriptions excluding EA restricted"
+#   QuotaBacklog              One of:
+#                               "-"
+#                               "<1% of region size"
+#                               "1-5% of region size"
+#                               ">5% of region size"
+#   DeploymentRisk            One of: "Low", "Moderate", "High"
+#   MitigationTimeline        A date "YYYY-MM-DD" or a broad window like
+#                               "H1 CY27" / "H2 CY27" / "TBD".
+#   RecommendedAlternative    Free text; comma-separated list if multiple.
+#   SourceDate                YYYY-MM-DD when the data was pulled.
+#   SourceNote                Free text (e.g. "aka.ms/AzureCapacity 2026-06-08").
+#
+# Example rows (delete the '#' to activate; these are illustrative only, always
+# verify against current Capacity Portal data before using):
+#
+# northeurope,region,Long-term gap for new datacenter(s),All new subscriptions restricted,>5% of region size,Low,TBD,"Sweden Central, Italy North",2026-06-08,From aka.ms/AzureCapacity snapshot
+# northeurope,AZ01,Long-term gap for new datacenter(s),All new subscriptions restricted,>5% of region size,Low,H2 CY27,,2026-06-08,
+# northeurope,AZ02,Long-term gap for new datacenter(s),All new subscriptions restricted,>5% of region size,Low,H1 CY28,,2026-06-08,
+# northeurope,AZ03,Long-term gap for new datacenter(s),All new subscriptions restricted,>5% of region size,Low,TBD,,2026-06-08,
+# swedencentral,region,Only classic/specialty constraints,-,<1% of region size,Low,-,,2026-06-08,Fully open
+#
+# If this file is missing or empty, Score-AzureRegionFit.ps1 treats every region
+# as "capacity status unknown" (soft-neutral 0.5 score) and does not apply the
+# -ExcludeConstrained hard filter.
+# ------------------------------------------------------------------------------

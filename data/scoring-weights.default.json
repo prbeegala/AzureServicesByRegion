@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Default soft-scoring weights for Score-AzureRegionFit.ps1. Weights must sum to 1.0. Override by passing a custom weights file to -WeightsFile.",
+  "profile_name": "default",
+  "profile_description": "Balanced profile for a typical enterprise moving new workloads to an alternative region while keeping the source region as their primary hub. Prioritises service coverage (must run our things), latency (hub-and-spoke pattern implies chatty traffic), and capacity health (want a region that will still be open in 6-12 months).",
+  "weights": {
+    "coverage":            0.25,
+    "latency_to_source":   0.20,
+    "capacity_health":     0.15,
+    "compute_price_delta": 0.15,
+    "az_support":          0.10,
+    "sku_portability":     0.08,
+    "egress_cost":         0.04,
+    "region_maturity":     0.03
+  },
+  "weight_descriptions": {
+    "coverage":            "Fraction of the source region's deployed resource types available in the candidate. Score = coverage percent normalised to [0..1].",
+    "latency_to_source":   "P50 RTT from candidate to source region. Score = 1 - min(rtt_ms/100, 1). Below 100ms is 'good enough' territory for most workloads.",
+    "capacity_health":     "Ordinal encoding of the Capacity Portal status. Open regions score 1.0, short-term-gap regions 0.7, long-term-gap 0.4, all-restricted 0.0. Unknown = 0.5 neutral.",
+    "compute_price_delta": "% cheaper compute for a representative SKU basket derived from the inventory. Score = 0.5 + clamp(-priceDeltaPct/20, -0.5, 0.5). A 10% cheaper region scores 1.0; a 10% more expensive region scores 0.0.",
+    "az_support":          "Fraction of the required AZ count actually available in the candidate. If -RequireAZ is not set this defaults to 1.0 (informational only).",
+    "sku_portability":     "Fraction of the source region's SKU families present in the candidate region. Independent of the raw provider coverage — asks whether the SPECIFIC families (Dv5, Ev5, etc.) exist here.",
+    "egress_cost":         "Delta between in-region peering ($0.01/GB) and cross-region peering to the source ($0.02-$0.08/GB). Score = 1 - (rate - baseline) / (maxRate - baseline) normalised across all candidates.",
+    "region_maturity":     "Higher score for established regions. Recommended regions score 1.0, other regions 0.7, new regions 0.4. Best-effort from az account list-locations metadata."
+  },
+  "alternative_profiles": {
+    "cost_optimised":   { "$comment": "For dev/test / batch / non-critical workloads.",
+                          "coverage": 0.20, "latency_to_source": 0.10, "capacity_health": 0.10, "compute_price_delta": 0.30, "az_support": 0.05, "sku_portability": 0.10, "egress_cost": 0.10, "region_maturity": 0.05 },
+    "latency_critical": { "$comment": "For user-facing services with tight response-time budgets.",
+                          "coverage": 0.20, "latency_to_source": 0.40, "capacity_health": 0.10, "compute_price_delta": 0.05, "az_support": 0.10, "sku_portability": 0.08, "egress_cost": 0.05, "region_maturity": 0.02 },
+    "capacity_first":   { "$comment": "For workloads that just need to land somewhere in a hurry (peak season, incident response).",
+                          "coverage": 0.20, "latency_to_source": 0.15, "capacity_health": 0.30, "compute_price_delta": 0.05, "az_support": 0.10, "sku_portability": 0.10, "egress_cost": 0.05, "region_maturity": 0.05 },
+    "critical_prod":    { "$comment": "For 3-zone-resilient production workloads.",
+                          "coverage": 0.20, "latency_to_source": 0.15, "capacity_health": 0.15, "compute_price_delta": 0.05, "az_support": 0.20, "sku_portability": 0.10, "egress_cost": 0.05, "region_maturity": 0.10 }
+  },
+  "$comment_usage": "To use an alternative profile, either pass -WeightsProfile <name> to the script, or copy the profile's weights into your own weights file and pass it via -WeightsFile."
+}
