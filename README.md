@@ -1,20 +1,27 @@
 # AzureServicesByRegion
 
-> **Two self-contained PowerShell tools for Azure regional planning:**
+> **Three self-contained PowerShell tools for Azure regional planning:**
 >
-> 1. **`Compare-AzureRegionCoverage.ps1`** — take a region you actually deploy in and score every other region by how much of your workload it can host. Answers *"is Sweden Central a viable failover for my North Europe workload?"* or *"which European region best matches what I run today?"*
-> 2. **`Get-AzureServicesByRegion.ps1`** — map every Azure resource provider (service) to every region of any Azure geography, with friendly names and categories.
+> 1. **`Score-AzureRegionFit.ps1`** — score every candidate region on all the dimensions that matter (coverage, latency, price, capacity, egress, AZs, SKUs, sovereignty, maturity), apply hard filters, and produce a defensible stack-rank. Answers *"North Europe is constrained — which alternative fits my workload best?"* Grounded in the [Region Selection Framework](./docs/region-selection-framework.md).
+> 2. **`Compare-AzureRegionCoverage.ps1`** — take a region you actually deploy in and score every other region by how much of your workload it can host. Answers *"is Sweden Central a viable failover for my North Europe workload?"* or *"which European region best matches what I run today?"*
+> 3. **`Get-AzureServicesByRegion.ps1`** — map every Azure resource provider (service) to every region of any Azure geography, with friendly names and categories.
 
 Point them at Europe, US, Asia Pacific, UK, Canada, Middle East, Africa, South America, Mexico — whatever geography your subscription or tenant can see. Get CSV matrices, Markdown breakdowns, and per-region summaries. No dependencies beyond Azure CLI.
+
+**Start here** if you're new: **[docs/region-selection-framework.md](./docs/region-selection-framework.md)** — the checklist of every criterion the tools score, grounded in Microsoft's official region-selection guidance plus the enterprise-grade dimensions that surface once you actually try to move a workload.
 
 ---
 
 ## Why these exist
 
-Azure has more than 300 resource providers and rolls services out to new regions constantly. The "Azure products by region" marketing page is human-friendly but doesn't map cleanly to ARM namespaces, and it's a hassle to scrape.
+Azure has more than 300 resource providers and rolls services out to new regions constantly. Add in capacity constraints in the mainstream hubs (NE / WE / UK South) and the growing set of non-paired (`3+0`) regions, and *"which region should I put this in?"* becomes a decision across at least 10 dimensions — service availability, latency, price, sovereignty, capacity, SKU portability, AZ support, region maturity, replication topology, egress cost. The Microsoft field team's answer to that is [aka.ms/regionselectiontoolkit](https://aka.ms/regionselectiontoolkit) plus the L300 5-pillar framework, but there's no single tool that ranks *your* workload against *those* criteria.
 
-- **`Compare-AzureRegionCoverage.ps1`** answers *"where can I run **my** workload?"* — it inventories what you actually have deployed (via Azure Resource Graph) and cross-references against the catalog. Perfect for DR planning, capacity constraints, sovereignty requirements, or "we want to expand to region X — will everything still work?"
+This repo fills that gap in three tools plus a checklist:
+
+- **`Score-AzureRegionFit.ps1`** answers *"which region best fits my workload across all the criteria that matter?"* — the full stack-rank across coverage, latency, price, capacity, egress, AZs, SKUs, sovereignty, maturity. Emits per-region scorecards (CSV + Markdown + JSON) with hard-filter rejections and weighted soft scores. Hard filters via CLI (`-DataResidency`, `-RequireAZ`, `-ExcludeConstrained`, `-MinCoverage`). Weights via a customer-supplied JSON profile (four profiles ship out of the box: `default`, `cost_optimised`, `latency_critical`, `capacity_first`, `critical_prod`).
+- **`Compare-AzureRegionCoverage.ps1`** answers *"where can I run **my** workload?"* — the service/provider coverage view. Feeds into `Score-AzureRegionFit.ps1` as one of its inputs.
 - **`Get-AzureServicesByRegion.ps1`** answers *"what's available where?"* — an exhaustive catalog built from the authoritative ARM provider metadata (`az account list-locations` + `az provider list`).
+- **[`docs/region-selection-framework.md`](./docs/region-selection-framework.md)** — the checklist: every criterion, why it matters, where to get the data, hard filter vs soft factor, WAF pillar mapping, and how the tool scores it.
 
 ## Quick start
 
@@ -24,6 +31,12 @@ git clone https://github.com/prbeegala/AzureServicesByRegion.git
 cd AzureServicesByRegion
 
 # Score every European region against your current subscription's North Europe deployments.
+./Score-AzureRegionFit.ps1 -SourceRegion northeurope
+
+# Same, but for a hard-latency-sensitive workload — different weights.
+./Score-AzureRegionFit.ps1 -SourceRegion northeurope -WeightsProfile latency_critical
+
+# Or just the service-coverage view.
 ./Compare-AzureRegionCoverage.ps1 -SourceRegion northeurope
 ```
 
