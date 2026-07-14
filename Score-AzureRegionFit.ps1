@@ -106,6 +106,19 @@
     Prices API. Default: 'Standard_D4s_v5,Standard_E4s_v5' which are broadly
     available and representative of Intel general-purpose + memory-optimised.
 
+.PARAMETER SkuDataFile
+    Path to a canonical SKU-by-region snapshot produced by
+    Get-AzureSkusByRegion.ps1 (default: ./data/skus-by-region.json). When
+    present, the SKU-portability soft score is upgraded from the coarse
+    "does Microsoft.Compute exist in this region?" heuristic to a real
+    per-provider coverage check: for every deployed provider that appears
+    in the Tier 1 catalogue (APIM, Compute, Storage, Cache, CognitiveServices,
+    Kusto, Synapse, MachineLearningServices, Web, Sql, DBforPostgreSQL) the
+    score is (SKUs supported in both source and target) / (SKUs supported
+    in source), averaged across the deployed providers. When the file is
+    missing or older than 30 days, a warning is written and the script
+    falls back to the legacy heuristic.
+
 .PARAMETER SkipPriceFetch
     Skip the Retail Prices API call. Compute-price-delta score is set to a
     neutral 0.5 for every region. Useful for offline / firewalled runs.
@@ -188,6 +201,8 @@ param(
     [double]$MinCoverage = 0,
 
     [string]$SkuBasket = 'Standard_D4s_v5,Standard_E4s_v5',
+
+    [string]$SkuDataFile,
 
     [switch]$SkipPriceFetch
 )
@@ -486,6 +501,94 @@ function Get-PriceDeltaPercent {
     return [math]::Round(($deltas | Measure-Object -Average).Average, 2)
 }
 
+# --- SKU-portability helpers -------------------------------------------------
+
+# Load and index the SKU snapshot from Get-AzureSkusByRegion.ps1. Returns a
+# hashtable: providerNs (lowercase) -> array of @{ Name; NormLocations }.
+# Returns $null if the file is missing or unparseable.
+function Import-SkuData {
+    param([string]$Path)
+    if (-not $Path -or -not (Test-Path $Path)) { return $null }
+    try {
+        $raw = Get-Content $Path -Raw | ConvertFrom-Json -Depth 12
+    } catch {
+        Write-Host ("Warning: could not parse SKU data file '{0}' - falling back to heuristic." -f $Path) -ForegroundColor DarkYellow
+        return $null
+    }
+    if (-not $raw.providers) { return $null }
+    # Age check.
+    if ($raw.snapshot_date) {
+        try {
+            $age = (Get-Date) - [datetime]::Parse($raw.snapshot_date)
+            if ($age.TotalDays -gt 30) {
+                Write-Host ("Warning: SKU data snapshot is {0:N0} days old ('{1}'). Refresh via Get-AzureSkusByRegion.ps1." -f $age.TotalDays, $Path) -ForegroundColor DarkYellow
+            }
+        } catch { }
+    }
+    $index = @{}
+    foreach ($p in $raw.providers.PSObject.Properties) {
+        $skus = foreach ($s in @($p.Value.skus)) {
+            $locSet = New-Object System.Collections.Generic.HashSet[string]
+            foreach ($l in @($s.locations)) { if ($l) { [void]$locSet.Add(($l -replace '\s','').ToLowerInvariant()) } }
+            [pscustomobject]@{ Name = $s.name; NormLocations = $locSet }
+        }
+        $index[$p.Name.ToLowerInvariant()] = @($skus)
+    }
+    return $index
+}
+
+# Extract unique provider namespaces (lowercase) from a deployed-types list.
+# Each entry has .type like 'microsoft.compute/virtualmachines'; we want
+# 'microsoft.compute'.
+function Get-DeployedProviders {
+    param([object[]]$Deployed)
+    $set = New-Object System.Collections.Generic.HashSet[string]
+    foreach ($d in $Deployed) {
+        $t = ($d.type -as [string])
+        if (-not $t) { continue }
+        $slash = $t.IndexOf('/')
+        $ns = if ($slash -gt 0) { $t.Substring(0, $slash) } else { $t }
+        [void]$set.Add($ns.ToLowerInvariant())
+    }
+    return $set
+}
+
+# Compute the SKU-portability score for a candidate region.
+# Returns a value in [0, 1]:
+#   - For each deployed provider in the SKU catalogue, ratio = (SKUs available
+#     in BOTH source and target) / (SKUs available in source). Providers not
+#     available in source are ignored (zero-source-SKUs case).
+#   - Score is the equal-weight average across providers.
+#   - Falls back to the legacy Compute-VM heuristic when the SKU index is
+#     empty or none of the deployed providers is in the catalogue.
+function Get-SkuPortabilityScore {
+    param(
+        [hashtable]$SkuIndex,
+        [System.Collections.Generic.HashSet[string]]$DeployedNs,
+        [string]$SrcNorm,
+        [string]$TgtNorm,
+        [hashtable]$RtMap
+    )
+    # Legacy heuristic used as a fallback.
+    $legacy = if ($RtMap.ContainsKey('microsoft.compute/virtualmachines')) {
+        if ($RtMap['microsoft.compute/virtualmachines'].Locations.Contains($TgtNorm)) { 1.0 } else { 0.2 }
+    } else { 0.7 }
+
+    if (-not $SkuIndex -or $SkuIndex.Count -eq 0 -or -not $DeployedNs) { return $legacy }
+
+    $ratios = @()
+    foreach ($ns in $DeployedNs) {
+        if (-not $SkuIndex.ContainsKey($ns)) { continue }
+        $skus = $SkuIndex[$ns]
+        $inSrc = @($skus | Where-Object { $_.NormLocations.Contains($SrcNorm) })
+        if ($inSrc.Count -eq 0) { continue }
+        $inBoth = @($inSrc | Where-Object { $_.NormLocations.Contains($TgtNorm) })
+        $ratios += ($inBoth.Count / $inSrc.Count)
+    }
+    if ($ratios.Count -eq 0) { return $legacy }
+    return [math]::Round((($ratios | Measure-Object -Average).Average), 3)
+}
+
 function ConvertTo-LatencyScore {
     param([Nullable[int]]$RttMs)
     if ($RttMs -eq $null) { return 0.5 }  # neutral for unknown
@@ -652,6 +755,20 @@ Write-Host ("  {0} distinct resource types, {1} total instances." -f $deployed.C
 $rtMap = Get-ProviderResourceTypeLocations
 Write-Host ("  Indexed {0} resource types across all providers." -f $rtMap.Count) -ForegroundColor Green
 
+# ---- SKU snapshot (optional data provider) ----------------------------------
+$skuIndex = $null
+$defaultSkuPath = Join-Path $PSScriptRoot 'data\skus-by-region.json'
+$skuPath = if ($SkuDataFile) { $SkuDataFile } elseif (Test-Path $defaultSkuPath) { $defaultSkuPath } else { $null }
+if ($skuPath) {
+    $skuIndex = Import-SkuData -Path $skuPath
+    if ($skuIndex) {
+        Write-Host ("  Loaded SKU snapshot: {0} providers indexed from '{1}'." -f $skuIndex.Count, $skuPath) -ForegroundColor Green
+    }
+} else {
+    Write-Host "  No SKU snapshot found — SKU portability will use the legacy Compute-VM heuristic. Run Get-AzureSkusByRegion.ps1 to enable per-provider portability scoring." -ForegroundColor DarkYellow
+}
+$deployedNs = Get-DeployedProviders -Deployed $deployed
+
 # ---- Candidate regions ------------------------------------------------------
 $geoForCandidates = if ($DataResidency) { $DataResidency } else { $GeographyGroup }
 $candidates = Get-CandidateRegions -Geo $geoForCandidates -IncludeStage:$IncludeStageRegions
@@ -746,10 +863,8 @@ $results = foreach ($cand in $candidates) {
     # --- Coverage score
     $coverageScore = [math]::Round($coveragePct / 100.0, 3)
 
-    # --- SKU family portability (proxied via compute provider coverage)
-    $skuPortabilityScore = if ($rtMap.ContainsKey('microsoft.compute/virtualmachines')) {
-        if ($rtMap['microsoft.compute/virtualmachines'].Locations.Contains($tgtNorm)) { 1.0 } else { 0.2 }
-    } else { 0.7 }
+    # --- SKU family portability (SKU snapshot if present, else legacy heuristic)
+    $skuPortabilityScore = Get-SkuPortabilityScore -SkuIndex $skuIndex -DeployedNs $deployedNs -SrcNorm $srcNorm -TgtNorm $tgtNorm -RtMap $rtMap
 
     # --- Maturity
     $maturityScore = ConvertTo-MaturityScore $cand.metadata
