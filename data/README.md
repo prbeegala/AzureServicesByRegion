@@ -8,10 +8,34 @@ sources unless explicitly noted.
 
 | File | Purpose | Public source | Refresh cadence |
 |------|---------|---------------|:---------------:|
+| [`skus-by-region.json`](./skus-by-region.json) | Canonical SKU x region snapshot for 11 Tier 1 providers (APIM, Compute, Storage, Cache, CognitiveServices, Kusto, Synapse, MachineLearningServices, Web, Sql, DBforPostgreSQL) | ARM `/providers/{ns}/skus`, `/providers/Microsoft.Web/geoRegions?sku=X`, `/providers/{ns}/locations/{loc}/capabilities` | Weekly (auto, see [../.github/workflows/refresh-snapshots.yml](../.github/workflows/refresh-snapshots.yml)) |
 | [`latency-baseline.json`](./latency-baseline.json) | Inter-region P50 RTT | [learn.microsoft.com — Azure network round-trip latency statistics](https://learn.microsoft.com/en-us/azure/networking/azure-network-latency) | 6-9 months (per Microsoft's own cadence) |
 | [`egress-rates.json`](./egress-rates.json) | VNet peering + internet egress rates | [Azure Bandwidth Pricing](https://azure.microsoft.com/en-us/pricing/details/bandwidth/) | Annual (rates change infrequently) |
 | [`scoring-weights.default.json`](./scoring-weights.default.json) | Default soft-scoring weights + 4 alternative profiles | This repo | On profile change |
 | [`capacity-status-template.csv`](./capacity-status-template.csv) | Empty template for optional capacity override | (blank shape) | Whenever you refresh your Capacity Portal view |
+
+## `skus-by-region.json`
+
+Produced by [`../Get-AzureSkusByRegion.ps1`](../Get-AzureSkusByRegion.ps1)
+and consumed by [`../Score-AzureRegionFit.ps1`](../Score-AzureRegionFit.ps1)
+for its SKU-portability soft score. Also rendered as human-readable
+Markdown/CSV under `../outputs/skus-by-region/<geo>/`.
+
+Refresh manually with:
+
+```powershell
+./Get-AzureSkusByRegion.ps1 -GeographyGroup Europe
+```
+
+...or leave it to the weekly [Refresh snapshots](../.github/workflows/refresh-snapshots.yml)
+workflow. See [`../docs/AUTOMATION.md`](../docs/AUTOMATION.md) for the OIDC
+setup that lets Actions push refreshed data/ and outputs/ back to the repo.
+
+Providers deferred to a Tier 2 backlog because their SKUs aren't cleanly
+enumerable at subscription scope: DBforMySQL, EventHub, ServiceBus,
+SignalRService, App/Container Apps, KeyVault, Search, Batch, DataFactory,
+DocumentDB. See the GitHub issue tracker for the auto-discover feature that
+would fold these in.
 
 ## `latency-baseline.json`
 
