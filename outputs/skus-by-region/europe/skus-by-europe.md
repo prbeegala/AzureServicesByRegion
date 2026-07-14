@@ -1,0 +1,1813 @@
+# Azure SKUs by Europe region
+
+Generated: 2026-07-14 | Providers: 11 | Source: Azure ARM (subscription-agnostic metadata)
+
+Source: ARM SKU endpoints (see docs/PROVIDERS-SKU-CATALOG.md for endpoint shapes per provider).
+
+## At a glance
+
+| Provider | Category | Endpoint | SKUs (total) | Regions in Europe |
+|---|---|:---:|---:|---:|
+| Microsoft.ApiManagement | Integration | A | 10 | 8/10 |
+| Microsoft.Compute | Compute | A | 1568 | 1391/1568 |
+| Microsoft.Storage | Storage | A | 14 | 14/14 |
+| Microsoft.Cache | Databases | A | 11 | 11/11 |
+| Microsoft.CognitiveServices | AI + ML | A | 12 | 9/12 |
+| Microsoft.Kusto | Analytics | A | 67 | 65/67 |
+| Microsoft.Synapse | Analytics | A | 2 | 2/2 |
+| Microsoft.MachineLearningServices | AI + ML | A | 1 | 1/1 |
+| Microsoft.Web | Web | B | 14 | 14/14 |
+| Microsoft.Sql | Databases | C | 12 | 12/12 |
+| Microsoft.DBforPostgreSQL | Databases | C | 3 | 3/3 |
+
+## Microsoft.ApiManagement
+
+Endpoint shape: **A**  |  Category: **Integration**  |  API version: `2024-05-01`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| AIGateway |  | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Basic |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| BasicV2 |  | - | - | - | yes | - | - | yes | yes | yes | yes | - | - | yes | yes | yes | - | yes |
+| Consumption |  | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | - | yes | - | yes |
+| Developer |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Isolated |  | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Premium |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| PremiumV2 |  | - | - | - | - | - | - | yes | yes | - | yes | - | - | - | yes | - | - | - |
+| Standard |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| StandardV2 |  | - | - | - | yes | - | - | yes | yes | yes | yes | - | - | yes | yes | yes | - | yes |
+
+## Microsoft.Compute
+
+Endpoint shape: **A**  |  Category: **Compute**  |  API version: `2024-07-01`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Aligned |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Classic |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DADSv5-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DASv4-Type1 |  | - | - | - | yes | - | - | - | - | yes | - | - | - | - | yes | - | - | yes |
+| DASv4-Type2 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DASv5-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Dasv6_Type1 |  | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DCadsv5-Type1 |  | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| DCasv5-Type1 |  | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| DCdsv3-Type1 |  | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| DCSv2-Type1 |  | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| DCsv3-Type1 |  | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| DDSv4-Type1 |  | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DDSv4-Type2 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DDSv5-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Ddsv6_Type1 |  | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| DSv3-Type1 |  | - | - | - | yes | yes | yes | yes | - | yes | yes | yes | - | - | - | yes | yes | yes |
+| DSv3-Type2 |  | - | - | - | yes | yes | yes | yes | - | yes | yes | yes | - | - | - | yes | yes | yes |
+| DSv3-Type3 |  | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DSv3-Type4 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DSv4-Type1 |  | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DSv4-Type2 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DSv5-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Dsv6-Type1 |  | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| EADSv5-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| EASv4-Type1 |  | - | - | - | yes | - | - | - | - | yes | - | - | - | - | yes | - | - | yes |
+| EASv4-Type2 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| EASv5-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Easv6_Type1 |  | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Ebdsv5-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Ebsv5-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| ECadsv5-Type1 |  | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| ECasv5-Type1 |  | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| EDSv4-Type1 |  | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| EDSv4-Type2 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| EDSv5-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| ESv3-Type1 |  | - | - | - | yes | yes | yes | yes | - | yes | yes | yes | - | - | - | yes | yes | yes |
+| ESv3-Type2 |  | - | - | - | yes | yes | yes | yes | - | yes | yes | yes | - | - | - | yes | yes | yes |
+| ESv3-Type3 |  | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| ESv3-Type4 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| ESv4-Type1 |  | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| ESv4-Type2 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| ESv5-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Esv6_Type1 |  | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| FSv2-Type2 |  | - | - | - | yes | yes | - | yes | - | yes | - | - | - | - | - | - | - | yes |
+| FSv2-Type3 |  | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| FSv2-Type4 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| FXmds-Type1 |  | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | - | - | yes |
+| Lasv3-Type1 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| LSv2-Type1 |  | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | - | - | - | yes |
+| Lsv3-Type1 |  | yes | yes | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Mdmsv2MedMem-Type1 |  | - | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Mdsv2MedMem-Type1 |  | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Mmsv2MedMem-Type1 |  | - | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| MS-Type1 |  | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| MSm-Type1 |  | - | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| MSmv2-Type1 |  | - | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | yes | yes |
+| MSv2-Type1 |  | - | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | yes | yes |
+| Msv2MedMem-Type1 |  | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| NVadsA10v5_Type1 |  | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes |
+| NVASv4-Type1 |  | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | - | - | yes |
+| NVSv3-Type1 |  | - | - | - | yes | - | - | - | - | yes | yes | yes | - | - | - | yes | - | yes |
+| Premium_LRS | Premium | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Premium_ZRS | Premium | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| PremiumV2_LRS | Premium | yes | - | - | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_A1_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_A2_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_A2m_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_A4_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_A4m_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_A8_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_A8m_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B12ms | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B16als_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B16as_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B16ls_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B16ms | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B16pls_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_B16ps_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_B16s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B1ls | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B1ms | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B1s | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B20ms | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B2als_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B2as_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B2ats_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B2ls_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B2ms | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B2pls_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_B2ps_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_B2pts_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_B2s | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B2s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B2ts_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B32als_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B32as_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B32ls_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B32s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B4als_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B4as_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B4ls_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B4ms | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B4pls_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_B4ps_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_B4s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B8als_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B8as_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B8ls_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B8ms | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_B8pls_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_B8ps_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_B8s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D1 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_D1_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D11 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_D11_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D11_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D12 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_D12_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D12_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D128ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D128alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D128als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D128as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D128ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D128ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D128lds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D128lds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D128ls_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D128ls_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D128nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D128nlds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D128nls_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D128ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D128s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D128s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D13 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_D13_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D13_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D14 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_D14_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D14_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D15_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D160ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D160alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D160als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D160as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D16a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D16alds_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D16als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D16as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D16d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D16lds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16lds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16lds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D16ls_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16ls_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16ls_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D16nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D16nlds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D16nls_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D16ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D16pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D16pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D16plds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D16plds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D16pls_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D16pls_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D16ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D16ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D16s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D16s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D192ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D192ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D192lds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D192ls_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D192s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D192s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D2 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_D2_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D2alds_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D2als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D2as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D2d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D2lds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2lds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2lds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D2ls_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2ls_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2ls_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D2nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D2nlds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D2nls_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D2ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D2pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D2pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D2plds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D2plds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D2pls_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D2pls_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D2ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D2ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D2s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D2s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D3 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_D3_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D3_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D32alds_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D32als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D32as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D32d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D32lds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32lds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32lds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D32ls_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32ls_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32ls_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D32nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D32nlds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D32nls_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D32ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D32pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D32pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D32plds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D32plds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D32pls_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D32pls_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D32ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D32ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D32s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D32s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D4 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_D4_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D48alds_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D48als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D48as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D48d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D48lds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48lds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48lds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D48ls_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48ls_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48ls_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D48nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D48nlds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D48nls_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D48ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D48pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D48pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D48plds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D48plds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D48pls_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D48pls_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D48ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D48ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D48s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D48s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D4a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D4alds_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D4als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D4as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D4d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D4lds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4lds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4lds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D4ls_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4ls_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4ls_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D4nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D4nlds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D4nls_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D4ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D4pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D4pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D4plds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D4plds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D4pls_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D4pls_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D4ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D4ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D4s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D4s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D5_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D5_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D64alds_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D64als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D64as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D64d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D64lds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64lds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64lds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D64ls_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64ls_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64ls_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D64nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D64nlds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D64nls_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D64ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D64pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D64pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D64plds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D64plds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D64pls_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D64pls_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D64ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D64ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D64s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D64s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D8_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D8alds_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D8als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D8as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D8d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D8lds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8lds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8lds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D8ls_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8ls_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8ls_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D8nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D8nlds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D8nls_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D8ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D8pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D8pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D8plds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D8plds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D8pls_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D8pls_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D8ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_D8ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D8s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D8s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D96_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D96alds_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D96als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D96as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_D96d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D96lds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96lds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96lds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D96ls_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96ls_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96ls_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D96nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D96nlds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D96nls_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D96ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_D96pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D96plds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D96pls_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D96ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_D96s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_D96s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC128eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC128es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC16ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC16ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC16ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC16as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC16as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC16as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC16ds_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC16eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC16eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC16es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC16es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC16s_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC1ds_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC1s_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC24ds_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC24s_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC2ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC2ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC2as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC2as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC2ds_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC2eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC2eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC2es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC2es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC2s_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC32ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC32ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC32ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC32as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC32as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC32as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC32ds_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC32eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC32eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC32es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC32es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC32s_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC48ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC48ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC48ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC48as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC48as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC48as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC48ds_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC48eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC48eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC48es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC48es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC48s_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC4ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC4ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC4ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC4as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC4as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC4as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC4ds_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC4eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC4eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC4es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC4es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC4s_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC64ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC64ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC64ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC64as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC64as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC64as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC64eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC64eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC64es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC64es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC8ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC8ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC8ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC8as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC8as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC8as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC8ds_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC8eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC8eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC8es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC8es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC8s_v3 | Standard | - | - | - | - | - | yes | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC96ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC96ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC96ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC96as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_DC96as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_DC96as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DC96eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC96eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DC96es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_DC96es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_DS1 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_DS1_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS11 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_DS11_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS11_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS11-1_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS12 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_DS12_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS12_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS12-1_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS12-2_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS13 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_DS13_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS13_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS13-2_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS13-4_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS14 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_DS14_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS14_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS14-4_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS14-8_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS15_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS2 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_DS2_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS2_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS3 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_DS3_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS3_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS4 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_DS4_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS4_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS5_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_DS5_v2_Promo | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E104i_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E104id_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E104ids_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E104is_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E112iads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E112ias_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E112ibds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E112ibs_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E128-32ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E128-32as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E128-32ds_v6 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E128-32s_v6 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E128-64ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E128-64as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E128-64ds_v6 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E128-64s_v6 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E128ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E128as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E128ds_v6 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E128ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E128nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E128ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E128s_v6 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E128s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E16_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-4ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-4ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E16-4as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-4as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-4as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E16-4ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-4ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-4ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-4s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-4s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-4s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-4s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-8ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-8ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E16-8as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-8as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-8as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E16-8ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-8ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-8ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-8s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-8s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-8s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16-8s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E160ads_v7 | Standard | - | - | - | - | - | - | yes | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_E160as_v7 | Standard | - | - | - | - | - | - | yes | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_E16a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E16as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E16bds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16bs_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E16nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E16ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E16pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E16pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E16ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E16ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E16s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E16s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E192ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E192ids_v6 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E192is_v6 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E192s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E2_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E20pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E20ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E20s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E20s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E2a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E2as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E2bds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2bs_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E2nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E2ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E2pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E2pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E2ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E2ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E2s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E2s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E32_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-16ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-16ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E32-16as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-16as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-16as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E32-16ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-16ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-16ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-16s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-16s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-16s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-16s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-8ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-8ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E32-8as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-8as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-8as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E32-8ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-8ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-8ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-8s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-8s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-8s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32-8s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E32as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E32bds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32bs_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E32nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E32ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E32pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E32pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E32ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E32ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E32s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E32s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E4_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4-2ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4-2ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E4-2as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4-2as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4-2as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E4-2ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4-2ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4-2ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4-2s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4-2s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4-2s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4-2s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E48as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E48bds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48bs_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E48nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E48ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E48pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E48ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E48s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E48s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E4a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E4as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E4bds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4bs_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E4nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E4ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E4pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E4pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E4ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E4ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E4s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E4s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E64_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-16ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-16ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E64-16as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-16as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-16as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E64-16ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-16ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-16ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-16s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-16s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-16s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-16s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-32ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-32ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E64-32as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-32as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-32as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E64-32ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-32ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-32ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-32s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-32s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-32s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64-32s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E64as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E64bds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64bs_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E64nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E64ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E64pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E64ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E64s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E64s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E8_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-2ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-2ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E8-2as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-2as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-2as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E8-2ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-2ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-2ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-2s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-2s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-2s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-2s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-4ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-4ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E8-4as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-4as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-4as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E8-4ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-4ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-4ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-4s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-4s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-4s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8-4s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E80ids_v4 | Standard | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E80is_v4 | Standard | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E8as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E8bds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8bs_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8d_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8ds_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E8nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E8ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E8pds_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E8pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E8ps_v5 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | yes | - | - | yes |
+| Standard_E8ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E8s_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8s_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E8s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E96_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-24ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-24ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-24ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E96-24as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-24as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-24as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E96-24ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-24ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-24s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-24s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-48ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-48ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-48ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E96-48as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-48as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-48as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E96-48ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-48ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-48s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96-48s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96a_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96ads_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E96as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96as_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_E96bds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96bs_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96d_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96ds_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96ds_v6 | Standard | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96ds_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E96ias_v4 | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_E96nds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E96ns_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E96pds_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E96ps_v6 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_E96s_v5 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96s_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_E96s_v7 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC128eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC128es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC128ieds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC128ies_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC16ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC16ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC16ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC16as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC16as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC16as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC16eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC16eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC16es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC16es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC20ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC20ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC20as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC20as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC2ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC2ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC2as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC2as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC2eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC2eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC2es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC2es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC32ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC32ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC32ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC32as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC32as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC32as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC32eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC32eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC32es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC32es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC48ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC48ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC48ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC48as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC48as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC48as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC48eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC48eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC48es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC48es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC4ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC4ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC4ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC4as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC4as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC4as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC4eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC4eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC4es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC4es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC64ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC64ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC64ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC64as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC64as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC64as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC64eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC64eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC64es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC64es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC8ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC8ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC8ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC8as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC8as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC8as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC8eds_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC8eds_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC8es_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_EC8es_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_EC96ads_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC96ads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC96ads_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC96as_cc_v5 | Standard | - | - | - | - | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC96as_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC96as_v6 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_EC96iads_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_EC96ias_v5 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | - | yes | - | yes |
+| Standard_F1 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F16 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F16-4amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F16-4ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F16-8amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F16-8ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F16ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F16alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F16als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F16als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F16amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F16ams_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F16ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F16as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F16as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F16s | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F16s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F1ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F1alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F1als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F1amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F1ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F1as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F1s | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F2-1amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F2-1ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F2ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F2alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F2als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F2als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F2amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F2ams_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F2ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F2as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F2as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F2s | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F2s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F32-16amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F32-16ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F32-8amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F32-8ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F32ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F32alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F32als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F32als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F32amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F32ams_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F32ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F32as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F32as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F32s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F4-1amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F4-1ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F4-2amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F4-2ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F48ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F48alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F48als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F48als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F48amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F48ams_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F48ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F48as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F48as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F48s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F4ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F4alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F4als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F4als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F4amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F4ams_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F4ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F4as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F4as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F4s | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F4s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F64-16amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F64-16ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F64-32amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F64-32ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F64ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F64alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F64als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F64als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F64amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F64ams_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F64ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F64as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F64as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F64s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F72s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F8 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F8-2amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F8-2ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F8-4amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F8-4ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F80ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F80alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F80als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F80amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F80ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F80as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F8ads_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F8alds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F8als_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F8als_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F8amds_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F8ams_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F8ams_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F8as_v6 | Standard | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F8as_v7 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | - | - | - | - | - | yes |
+| Standard_F8s | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_F8s_v2 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX12-6mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX12-6ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX12mds | Standard | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | - | - | yes |
+| Standard_FX12mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX12ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX16-4mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX16-4ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX16-8mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX16-8ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX16mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX16ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX24-12mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX24-12ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX24-6mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX24-6ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX24mds | Standard | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | - | - | yes |
+| Standard_FX24mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX24ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX2mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX2ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX32-16mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX32-16ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX32-8mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX32-8ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX32mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX32ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX36mds | Standard | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | - | - | yes |
+| Standard_FX4-2mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX4-2ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX48-12mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX48-12ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX48-24mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX48-24ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX48mds | Standard | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | - | - | yes |
+| Standard_FX48mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX48ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX4mds | Standard | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | - | - | yes |
+| Standard_FX4mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX4ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX64-16mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX64-16ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX64-32mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX64-32ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX64mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX64ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX8-2mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX8-2ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX8-4mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX8-4ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX8mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX8ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX96-24mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX96-24ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX96-48mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX96-48ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX96mds_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_FX96ms_v2 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_G1 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_G2 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_G3 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_G4 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_G5 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_GS1 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_GS2 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_GS3 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_GS4 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_GS4-4 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_GS4-8 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_GS5 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_GS5-16 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_GS5-8 | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_HB120-16rs_v2 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_HB120-16rs_v3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_HB120-32rs_v2 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_HB120-32rs_v3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_HB120-64rs_v2 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_HB120-64rs_v3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_HB120-96rs_v2 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_HB120-96rs_v3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_HB120rs_v2 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_HB120rs_v3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_HB176-144rs_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | yes | yes | - | - | - |
+| Standard_HB176-24rs_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | yes | yes | - | - | - |
+| Standard_HB176-48rs_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | yes | yes | - | - | - |
+| Standard_HB176-96rs_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | yes | yes | - | - | - |
+| Standard_HB176rs_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | yes | yes | - | - | - |
+| Standard_HB368-144rs_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_HB368-192rs_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_HB368-240rs_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_HB368-288rs_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_HB368-336rs_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_HB368-48rs_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_HB368-96rs_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_HB368rs_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_HC44-16rs | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_HC44-32rs | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_HC44rs | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_HX176-144rs | Standard | - | - | - | - | - | - | - | - | - | - | - | - | yes | yes | - | - | - |
+| Standard_HX176-24rs | Standard | - | - | - | - | - | - | - | - | - | - | - | - | yes | yes | - | - | - |
+| Standard_HX176-48rs | Standard | - | - | - | - | - | - | - | - | - | - | - | - | yes | yes | - | - | - |
+| Standard_HX176-96rs | Standard | - | - | - | - | - | - | - | - | - | - | - | - | yes | yes | - | - | - |
+| Standard_HX176rs | Standard | - | - | - | - | - | - | - | - | - | - | - | - | yes | yes | - | - | - |
+| Standard_L12aos_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L16aos_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L16as_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_L16as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L16s | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_L16s_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_L16s_v3 | Standard | yes | yes | - | yes | - | - | yes | yes | yes | - | - | yes | - | yes | yes | - | yes |
+| Standard_L16s_v4 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_L24aos_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L2aos_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L2as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L2s_v4 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_L32aos_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L32as_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_L32as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L32s | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_L32s_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_L32s_v3 | Standard | yes | yes | - | yes | - | - | yes | yes | yes | - | - | yes | - | yes | yes | - | yes |
+| Standard_L32s_v4 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_L48as_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_L48as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L48s_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_L48s_v3 | Standard | yes | yes | - | yes | - | - | yes | yes | yes | - | - | yes | - | yes | yes | - | yes |
+| Standard_L48s_v4 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_L4aos_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L4as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L4s | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_L4s_v4 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_L64as_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_L64as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L64s_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_L64s_v3 | Standard | yes | yes | - | yes | - | - | yes | yes | yes | - | - | yes | - | yes | yes | - | yes |
+| Standard_L64s_v4 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_L80as_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_L80as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L80s_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_L80s_v3 | Standard | yes | yes | - | yes | - | - | yes | yes | yes | - | - | yes | - | yes | yes | - | yes |
+| Standard_L80s_v4 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_L8aos_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L8as_v3 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_L8as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L8s | Standard | - | - | - | yes | yes | yes | - | - | yes | - | yes | - | - | - | - | - | yes |
+| Standard_L8s_v2 | Standard | - | - | - | yes | - | - | yes | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_L8s_v3 | Standard | yes | yes | - | yes | - | - | yes | yes | yes | - | - | yes | - | yes | yes | - | yes |
+| Standard_L8s_v4 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_L96as_v4 | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_L96s_v4 | Standard | - | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_LRS | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_M128 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M128-32ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M128-64bds_3_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M128-64bds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M128-64bs_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M128-64ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M128bds_3_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M128bds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M128bs_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M128dms_v2 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M128ds_v2 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M128m | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M128ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M128ms_v2 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M128s | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M128s_v2 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M12ds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M12s_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M16-4ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M16-8ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M16bds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M16bs_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M16ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M176-88bds_4_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M176-88bds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M176-88bs_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M176bds_4_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M176bds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M176bs_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M176ds_3_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M176ds_4_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M176s_3_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M176s_4_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M192idms_v2 | Standard | - | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M192ids_v2 | Standard | - | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M192ims_v2 | Standard | - | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M192is_v2 | Standard | - | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M208ms_v2 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | yes | yes |
+| Standard_M208s_v2 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | yes | yes |
+| Standard_M24ds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M24s_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M32-16ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M32-8ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M32bds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M32bs_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M32dms_v2 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M32ls | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M32ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M32ms_v2 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M32ts | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M416-208ms_v2 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | yes | yes |
+| Standard_M416-208s_v2 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | yes | yes |
+| Standard_M416bs_v3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_M416ds_10_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M416ds_12_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M416ds_6_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M416ds_8_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M416ds_9_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M416ms_v2 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | yes | yes |
+| Standard_M416s_10_v2 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | yes | yes |
+| Standard_M416s_10_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M416s_12_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M416s_6_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M416s_8_v2 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | yes | yes |
+| Standard_M416s_8_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M416s_9_v2 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | yes | yes |
+| Standard_M416s_9_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M416s_v2 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | yes | yes |
+| Standard_M48bds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M48bs_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M48ds_1_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M48s_1_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M624ds_12_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M624s_12_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M64 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M64-16ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M64-32bds_1_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M64-32ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M64bds_1_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M64bds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M64bs_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M64dms_v2 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M64ds_v2 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M64ls | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M64m | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M64ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M64ms_v2 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M64s | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M64s_v2 | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M8-2ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M8-4ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M832ds_12_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M832ids_16_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M832is_16_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M832s_12_v3 | Standard | - | - | - | - | - | - | yes | yes | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M8ms | Standard | yes | - | - | yes | - | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| Standard_M96-48bds_2_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M96bds_2_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M96bds_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M96bs_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M96ds_1_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M96ds_2_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M96s_1_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_M96s_2_v3 | Standard | yes | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | yes | - | yes |
+| Standard_NC12s_v3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NC144ds_xl_RTXPRO6000BSE_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC144lds_xl_RTXPRO6000BSE_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC16ads_A10_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC16as_T4_v3 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | - | - | yes |
+| Standard_NC24ads_A100_v4 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | - | yes | yes | - | yes |
+| Standard_NC24lds_xl_RTXPRO6000BSE_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC24rs_v3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NC24s_v3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NC288ds_xl_RTXPRO6000BSE_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC288lds_xl_RTXPRO6000BSE_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC32ads_A10_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC36ds_xl_RTXPRO6000BSE_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC36lds_xl_RTXPRO6000BSE_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC40ads_H100_v5 | Standard | - | - | - | - | - | - | yes | - | yes | - | - | - | yes | yes | yes | - | yes |
+| Standard_NC48ads_A100_v4 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | - | yes | yes | - | yes |
+| Standard_NC4as_T4_v3 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | - | - | yes |
+| Standard_NC64as_T4_v3 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | - | - | yes |
+| Standard_NC6s_v3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NC72ds_xl_RTXPRO6000BSE_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC72lds_xl_RTXPRO6000BSE_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC80adis_H100_v5 | Standard | - | - | - | - | - | - | yes | - | yes | - | - | - | yes | yes | yes | - | yes |
+| Standard_NC8ads_A10_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NC8as_T4_v3 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | - | - | yes |
+| Standard_NC96ads_A100_v4 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | - | yes | yes | - | yes |
+| Standard_NCC40ads_H100_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_ND128isr_GB300_v6 | Standard | - | - | - | - | - | - | yes | - | yes | - | - | - | - | yes | - | - | - |
+| Standard_ND128isr_NDR_GB200_v6 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_ND40rs_v2 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_ND96amsr_A100_v4 | Standard | - | - | - | - | - | - | - | yes | - | - | - | - | - | yes | - | - | yes |
+| Standard_ND96asr_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_ND96is_MI300X_v5 | Standard | - | - | - | yes | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_ND96isr_H100_v5 | Standard | - | - | - | - | - | - | - | yes | - | yes | - | yes | - | yes | - | - | yes |
+| Standard_ND96isr_H200_v5 | Standard | - | - | - | yes | - | - | - | yes | - | - | - | yes | yes | - | yes | - | - |
+| Standard_ND96isr_MI300X_v5 | Standard | - | - | - | yes | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NG16ads_V620_v1 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | yes | - | - | yes |
+| Standard_NG32adms_V620_v1 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | yes | - | - | yes |
+| Standard_NG32ads_V620_v1 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | yes | - | - | yes |
+| Standard_NG8ads_V620_v1 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | yes | - | - | yes |
+| Standard_NP10s | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NP20s | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NP40s | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NV12ads_A10_v5 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes |
+| Standard_NV12ads_V710_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NV12s_v2 | Standard | - | - | - | yes | - | - | - | - | yes | yes | yes | - | - | - | yes | - | yes |
+| Standard_NV12s_v3 | Standard | - | - | - | yes | - | - | - | - | yes | yes | yes | - | - | - | yes | - | yes |
+| Standard_NV16as_v4 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | - | - | yes |
+| Standard_NV18ads_A10_v5 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes |
+| Standard_NV24ads_V710_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NV24s_v2 | Standard | - | - | - | yes | - | - | - | - | yes | yes | yes | - | - | - | yes | - | yes |
+| Standard_NV24s_v3 | Standard | - | - | - | yes | - | - | - | - | yes | yes | yes | - | - | - | yes | - | yes |
+| Standard_NV28adms_V710_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_NV32as_v4 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | - | - | yes |
+| Standard_NV36adms_A10_v5 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes |
+| Standard_NV36ads_A10_v5 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes |
+| Standard_NV48s_v3 | Standard | - | - | - | yes | - | - | - | - | yes | yes | yes | - | - | - | yes | - | yes |
+| Standard_NV4ads_V710_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NV4as_v4 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | - | - | yes |
+| Standard_NV6ads_A10_v5 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes |
+| Standard_NV6s_v2 | Standard | - | - | - | yes | - | - | - | - | yes | yes | yes | - | - | - | yes | - | yes |
+| Standard_NV72ads_A10_v5 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes |
+| Standard_NV8ads_V710_v5 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_NV8as_v4 | Standard | - | - | - | yes | - | - | yes | yes | yes | - | - | yes | yes | yes | - | - | yes |
+| Standard_PB6s | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_ZRS | Standard | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| StandardSSD_LRS | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| StandardSSD_ZRS | Standard | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| UltraSSD_LRS | Ultra | yes | - | - | yes | - | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes | yes |
+
+## Microsoft.Storage
+
+Endpoint shape: **A**  |  Category: **Storage**  |  API version: `2023-05-01`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Premium_LRS | Premium | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Premium_ZRS | Premium | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| PremiumV2_LRS | Premium | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| PremiumV2_ZRS | Premium | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Standard_GRS | Standard | - | - | - | yes | yes | yes | yes | - | yes | yes | yes | - | - | yes | yes | yes | yes |
+| Standard_GZRS | Standard | - | - | - | yes | - | - | yes | - | yes | yes | - | - | - | yes | yes | - | yes |
+| Standard_LRS | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| Standard_RAGRS | Standard | - | - | - | yes | yes | yes | yes | - | yes | yes | yes | - | - | yes | yes | yes | yes |
+| Standard_RAGZRS | Standard | - | - | - | yes | - | - | yes | - | yes | yes | - | - | - | yes | yes | - | yes |
+| Standard_ZRS | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| StandardV2_GRS | Standard | - | - | - | yes | yes | yes | yes | - | yes | yes | yes | - | - | yes | yes | yes | yes |
+| StandardV2_GZRS | Standard | - | - | - | yes | - | - | yes | - | yes | yes | - | - | - | yes | yes | - | yes |
+| StandardV2_LRS | Standard | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| StandardV2_ZRS | Standard | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+
+## Microsoft.Cache
+
+Endpoint shape: **A**  |  Category: **Databases**  |  API version: `2024-11-01`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Enterprise_E1 | Enterprise | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Enterprise_E10 | Enterprise | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Enterprise_E100 | Enterprise | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Enterprise_E20 | Enterprise | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Enterprise_E200 | Enterprise | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Enterprise_E400 | Enterprise | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Enterprise_E5 | Enterprise | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| Enterprise_E50 | Enterprise | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| EnterpriseFlash_F1500 | EnterpriseFlash | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| EnterpriseFlash_F300 | EnterpriseFlash | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| EnterpriseFlash_F700 | EnterpriseFlash | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+
+## Microsoft.CognitiveServices
+
+Endpoint shape: **A**  |  Category: **AI + ML**  |  API version: `2024-10-01`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| C2 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | - | - | yes | yes | yes | yes |
+| C3 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | - | - | yes | yes | yes | yes |
+| C4 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | - | - | yes | yes | yes | yes |
+| D3 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | - | - | yes | yes | yes | yes |
+| E0 | Enterprise | - | - | - | yes | - | - | yes | yes | yes | yes | - | - | - | yes | yes | yes | yes |
+| F0 | Free | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| S | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | - | - | yes | yes | yes | yes |
+| S0 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| S1 | Standard | - | - | - | yes | - | - | yes | yes | yes | yes | - | - | - | yes | yes | yes | yes |
+| S2 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| S3 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| S4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+
+## Microsoft.Kusto
+
+Endpoint shape: **A**  |  Category: **Analytics**  |  API version: `2024-04-13`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Dev(No SLA)_Standard_D11_v2 | Basic | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Dev(No SLA)_Standard_E2a_v4 | Basic | - | - | - | yes | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_D11_v2 | Standard | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_D12_v2 | Standard | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_D13_v2 | Standard | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_D14_v2 | Standard | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_D16d_v5 | Standard | yes | yes | yes | - | - | - | yes | - | yes | - | - | - | yes | - | yes | - | yes |
+| Standard_D32d_v4 | Standard | yes | yes | yes | yes | yes | - | yes | - | yes | yes | - | - | - | - | yes | - | yes |
+| Standard_D32d_v5 | Standard | yes | yes | yes | - | - | - | yes | - | yes | - | - | - | yes | - | yes | - | yes |
+| Standard_DS13_v2+1TB_PS | Standard | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_DS13_v2+2TB_PS | Standard | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_DS14_v2+3TB_PS | Standard | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_DS14_v2+4TB_PS | Standard | - | - | - | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_E16a_v4 | Standard | - | - | - | yes | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_E16ads_v5 | Standard | yes | yes | - | yes | - | - | yes | - | yes | - | - | yes | - | - | yes | - | yes |
+| Standard_E16as_v4+3TB_PS | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_E16as_v4+4TB_PS | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_E16as_v5+3TB_PS | Standard | - | - | - | yes | - | - | - | - | - | yes | - | - | - | yes | - | - | yes |
+| Standard_E16as_v5+4TB_PS | Standard | - | - | - | yes | - | - | - | - | - | yes | - | - | - | yes | - | - | yes |
+| Standard_E16d_v4 | Standard | yes | yes | yes | - | - | yes | - | - | - | yes | - | - | - | yes | yes | - | yes |
+| Standard_E16d_v5 | Standard | yes | yes | yes | yes | - | - | - | yes | - | - | - | - | - | - | - | - | yes |
+| Standard_E16s_v4+3TB_PS | Standard | - | - | - | yes | yes | - | yes | - | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_E16s_v4+4TB_PS | Standard | - | - | - | yes | yes | - | yes | - | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_E16s_v5+3TB_PS | Standard | yes | yes | yes | - | - | yes | yes | yes | - | - | - | - | yes | - | yes | - | yes |
+| Standard_E16s_v5+4TB_PS | Standard | yes | yes | yes | - | - | yes | yes | yes | - | - | - | - | yes | - | yes | - | yes |
+| Standard_E2a_v4 | Standard | - | - | - | yes | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_E2ads_v5 | Standard | yes | yes | - | yes | - | - | yes | - | yes | - | - | yes | - | - | yes | - | yes |
+| Standard_E2d_v4 | Standard | yes | yes | yes | - | - | yes | - | - | - | yes | - | - | - | yes | yes | - | yes |
+| Standard_E2d_v5 | Standard | yes | yes | yes | yes | - | - | - | yes | - | - | - | - | - | - | - | - | yes |
+| Standard_E4a_v4 | Standard | - | - | - | yes | - | - | - | - | yes | - | - | - | - | - | - | - | - |
+| Standard_E4ads_v5 | Standard | yes | yes | - | yes | - | - | yes | - | yes | - | - | yes | - | - | yes | - | yes |
+| Standard_E4d_v4 | Standard | yes | yes | yes | - | - | yes | - | - | - | yes | - | - | - | yes | yes | - | yes |
+| Standard_E4d_v5 | Standard | yes | yes | yes | yes | - | - | - | yes | - | - | - | - | - | - | - | - | yes |
+| Standard_E80ids_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E80ids_v4+32TB_PS | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Standard_E8a_v4 | Standard | - | - | - | yes | - | - | - | - | yes | - | - | - | - | - | - | - | - |
+| Standard_E8ads_v5 | Standard | yes | yes | - | yes | - | - | yes | - | yes | - | - | yes | - | - | yes | - | yes |
+| Standard_E8as_v4+1TB_PS | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | - |
+| Standard_E8as_v4+2TB_PS | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | - |
+| Standard_E8as_v5+1TB_PS | Standard | - | - | - | yes | - | - | - | - | - | yes | - | - | - | yes | - | - | yes |
+| Standard_E8as_v5+2TB_PS | Standard | - | - | - | yes | - | - | - | - | - | yes | - | - | - | yes | - | - | yes |
+| Standard_E8d_v4 | Standard | yes | yes | yes | - | - | yes | - | - | - | yes | - | - | - | yes | yes | - | yes |
+| Standard_E8d_v5 | Standard | yes | yes | yes | yes | - | - | - | yes | - | - | - | - | - | - | - | - | yes |
+| Standard_E8s_v4+1TB_PS | Standard | - | - | - | yes | yes | - | yes | - | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_E8s_v4+2TB_PS | Standard | - | - | - | yes | yes | - | yes | - | yes | yes | yes | yes | yes | yes | yes | - | yes |
+| Standard_E8s_v5+1TB_PS | Standard | yes | yes | yes | - | - | yes | yes | yes | - | - | - | - | yes | - | yes | - | yes |
+| Standard_E8s_v5+2TB_PS | Standard | yes | yes | yes | - | - | yes | yes | yes | - | - | - | - | yes | - | yes | - | yes |
+| Standard_EC16ads_v5 | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC16as_v5+3TB_PS | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC16as_v5+4TB_PS | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC8ads_v5 | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC8as_v5+1TB_PS | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_EC8as_v5+2TB_PS | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_L16aos_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_L16as_v3 | Standard | - | - | - | - | yes | yes | yes | - | yes | yes | - | - | yes | yes | yes | - | yes |
+| Standard_L16s | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | - |
+| Standard_L16s_v2 | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_L16s_v3 | Standard | - | - | - | yes | - | - | yes | - | - | - | - | - | - | yes | - | - | yes |
+| Standard_L32aos_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_L32as_v3 | Standard | - | - | - | - | yes | yes | yes | - | yes | yes | - | - | yes | yes | yes | - | yes |
+| Standard_L32s_v3 | Standard | - | - | - | yes | - | - | yes | - | - | - | - | - | - | yes | - | - | yes |
+| Standard_L4s | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_L8aos_v4 | Standard | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | yes |
+| Standard_L8as_v3 | Standard | - | - | - | - | yes | yes | yes | - | yes | yes | - | - | yes | yes | yes | - | yes |
+| Standard_L8s | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | - |
+| Standard_L8s_v2 | Standard | - | - | - | - | - | - | - | - | yes | - | - | - | - | - | - | - | yes |
+| Standard_L8s_v3 | Standard | - | - | - | yes | - | - | yes | - | - | - | - | - | - | yes | - | - | yes |
+
+## Microsoft.Synapse
+
+Endpoint shape: **A**  |  Category: **Analytics**  |  API version: `2021-06-01`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Compute optimized |  | - | - | - | yes | - | - | - | yes | yes | - | - | - | - | - | - | - | yes |
+| Storage optimized |  | - | - | - | - | yes | - | yes | - | yes | yes | - | - | yes | yes | yes | - | yes |
+
+## Microsoft.MachineLearningServices
+
+Endpoint shape: **A**  |  Category: **AI + ML**  |  API version: `2024-10-01`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Basic | Basic | - | - | - | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+
+## Microsoft.Web
+
+Endpoint shape: **B**  |  Category: **Web**  |  API version: `2023-12-01`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| BASIC |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| DYNAMIC |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| ELASTICPREMIUM |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| FLEXCONSUMPTION |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| FREE |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| ISOLATED |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| ISOLATEDV2 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| PREMIUM |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| PREMIUMMV3 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| PREMIUMV2 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| PREMIUMV3 |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| SHARED |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| STANDARD |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+| WORKFLOWSTANDARD |  | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes |
+
+## Microsoft.Sql
+
+Endpoint shape: **C**  |  Category: **Databases**  |  API version: `2023-08-01-preview`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| DB:Basic |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| DB:BusinessCritical |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| DB:DataWarehouse |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| DB:Free |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| DB:GeneralPurpose |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| DB:Hyperscale |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| DB:Premium |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| DB:Standard |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| DB:Stretch |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| DB:System |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| MI:BusinessCritical |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+| MI:GeneralPurpose |  | yes | yes | yes | yes | - | - | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes |
+
+## Microsoft.DBforPostgreSQL
+
+Endpoint shape: **C**  |  Category: **Databases**  |  API version: `2024-08-01`
+
+| SKU | Tier | Austria East | Belgium Central | Denmark East | France Central | France South | Germany North | Germany West Central | Italy North | North Europe | Norway East | Norway West | Poland Central | Spain Central | Sweden Central | Switzerland North | Switzerland West | West Europe |
+|-----|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Burstable |  | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| GeneralPurpose |  | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+| MemoryOptimized |  | yes | yes | yes | yes | yes | - | yes | yes | yes | yes | - | yes | yes | yes | yes | yes | yes |
+

@@ -1,14 +1,23 @@
 # AzureServicesByRegion
 
-> **Three self-contained PowerShell tools for Azure regional planning:**
+[![Refresh snapshots](https://github.com/prbeegala/AzureServicesByRegion/actions/workflows/refresh-snapshots.yml/badge.svg?branch=main&event=schedule)](https://github.com/prbeegala/AzureServicesByRegion/actions/workflows/refresh-snapshots.yml)
+
+> **Three self-contained PowerShell tools for Azure regional planning, plus a
+> weekly-refreshed SKU-by-region snapshot:**
 >
 > 1. **`Score-AzureRegionFit.ps1`** — score every candidate region on all the dimensions that matter (coverage, latency, price, capacity, egress, AZs, SKUs, sovereignty, maturity), apply hard filters, and produce a defensible stack-rank. Answers *"North Europe is constrained — which alternative fits my workload best?"* Grounded in the [Region Selection Framework](./docs/region-selection-framework.md).
 > 2. **`Compare-AzureRegionCoverage.ps1`** — take a region you actually deploy in and score every other region by how much of your workload it can host. Answers *"is Sweden Central a viable failover for my North Europe workload?"* or *"which European region best matches what I run today?"*
 > 3. **`Get-AzureServicesByRegion.ps1`** — map every Azure resource provider (service) to every region of any Azure geography, with friendly names and categories.
+> 4. **`Get-AzureSkusByRegion.ps1`** — refresh the canonical `data/skus-by-region.json` snapshot that powers `Score-AzureRegionFit.ps1`'s SKU-portability dimension. Covers 11 Tier 1 providers via three ARM endpoint shapes.
 
 Point them at Europe, US, Asia Pacific, UK, Canada, Middle East, Africa, South America, Mexico — whatever geography your subscription or tenant can see. Get CSV matrices, Markdown breakdowns, and per-region summaries. No dependencies beyond Azure CLI.
 
 **Start here** if you're new: **[docs/region-selection-framework.md](./docs/region-selection-framework.md)** — the checklist of every criterion the tools score, grounded in Microsoft's official region-selection guidance plus the enterprise-grade dimensions that surface once you actually try to move a workload.
+
+**Snapshots stay fresh automatically:** a weekly GitHub Actions workflow refreshes
+`data/skus-by-region.json` and the `outputs/services-by-region/` +
+`outputs/skus-by-region/` folders using OIDC federated auth (no long-lived
+secrets). See [docs/AUTOMATION.md](./docs/AUTOMATION.md) for the one-time setup.
 
 ---
 
@@ -21,7 +30,9 @@ This repo fills that gap in three tools plus a checklist:
 - **`Score-AzureRegionFit.ps1`** answers *"which region best fits my workload across all the criteria that matter?"* — the full stack-rank across coverage, latency, price, capacity, egress, AZs, SKUs, sovereignty, maturity. Emits per-region scorecards (CSV + Markdown + JSON) with hard-filter rejections and weighted soft scores. Hard filters via CLI (`-DataResidency`, `-RequireAZ`, `-ExcludeConstrained`, `-MinCoverage`). Weights via a customer-supplied JSON profile (four profiles ship out of the box: `default`, `cost_optimised`, `latency_critical`, `capacity_first`, `critical_prod`).
 - **`Compare-AzureRegionCoverage.ps1`** answers *"where can I run **my** workload?"* — the service/provider coverage view. Feeds into `Score-AzureRegionFit.ps1` as one of its inputs.
 - **`Get-AzureServicesByRegion.ps1`** answers *"what's available where?"* — an exhaustive catalog built from the authoritative ARM provider metadata (`az account list-locations` + `az provider list`).
+- **`Get-AzureSkusByRegion.ps1`** answers *"which SKUs (not just services) live in which region?"* — refreshes `data/skus-by-region.json` from the ARM SKUs endpoints across 11 Tier 1 providers. Powers the SKU-portability dimension of `Score-AzureRegionFit.ps1`.
 - **[`docs/region-selection-framework.md`](./docs/region-selection-framework.md)** — the checklist: every criterion, why it matters, where to get the data, hard filter vs soft factor, WAF pillar mapping, and how the tool scores it.
+- **[`docs/AUTOMATION.md`](./docs/AUTOMATION.md)** — how to wire the weekly refresh workflow (OIDC federated identity, no long-lived secrets).
 
 ## Quick start
 
@@ -327,6 +338,99 @@ Open the script and edit the hashtable inside `Get-FriendlyServiceMap`. Keys are
 ```
 
 PRs welcome — see [Contributing](#contributing).
+
+---
+
+# Get-AzureSkusByRegion.ps1
+
+Refreshes `data/skus-by-region.json` — a canonical map of `provider →
+SKU → supported-regions` for 11 Tier 1 providers. Consumed by
+[`Score-AzureRegionFit.ps1`](#score-azureregionfitps1) for its
+SKU-portability soft-scoring dimension.
+
+## Why it exists
+
+`Get-AzureServicesByRegion.ps1` gets you to the **provider** granularity
+(is `Microsoft.ApiManagement` available in UK South?). But a region can
+host `Microsoft.ApiManagement/service` while lacking `StandardV2` — the
+question that actually drives placement decisions.
+
+Empirical probe of 21 candidate ARM providers found:
+
+- **8** populate the subscription-scope `/providers/{ns}/skus` endpoint
+  cleanly (Shape A): ApiManagement, Compute, Storage, Cache,
+  CognitiveServices, Kusto, Synapse, MachineLearningServices.
+- **1** uses per-SKU filter iteration on `/providers/Microsoft.Web/geoRegions`
+  (Shape B): Web (App Service + Functions + Logic Apps).
+- **2** need per-region `/locations/{loc}/capabilities` calls (Shape C):
+  Sql, DBforPostgreSQL.
+- **10** return `{"value": []}` or 4xx on the subscription-scope route
+  and are deferred to a Tier 2 backlog: DBforMySQL, EventHub, ServiceBus,
+  SignalRService, App (Container Apps), KeyVault, Search, Batch,
+  DataFactory, DocumentDB.
+
+## Usage
+
+```powershell
+# Full refresh: data/skus-by-region.json + Europe MD/CSV under outputs/skus-by-region/europe/.
+./Get-AzureSkusByRegion.ps1
+
+# Render Markdown/CSV for a different geography (JSON always covers all regions).
+./Get-AzureSkusByRegion.ps1 -GeographyGroup 'UK'
+./Get-AzureSkusByRegion.ps1 -GeographyGroup 'US'
+
+# Only touch one provider's block in the snapshot (others are preserved).
+./Get-AzureSkusByRegion.ps1 -Provider Microsoft.ApiManagement
+
+# Just print the Tier 1 catalogue and exit.
+./Get-AzureSkusByRegion.ps1 -List
+```
+
+## Parameters
+
+| Parameter | Default | Description |
+| --- | --- | --- |
+| `-GeographyGroup` | `Europe` | Affects the rendered Markdown/CSV only. The JSON always covers every region the SKU endpoints return. |
+| `-Provider` | *(all 11)* | One or more provider namespaces to refresh. Others in the existing JSON are preserved. |
+| `-SubscriptionId` | current context | Any active subscription (endpoints are subscription-agnostic in payload). |
+| `-OutputDirectory` | current directory | Base for `data/` and `outputs/skus-by-region/`. |
+| `-SkipMarkdown` | *(off)* | Only write `data/skus-by-region.json`. |
+| `-List` | *(off)* | Print the Tier 1 catalogue and exit. |
+
+## Outputs
+
+| File | Purpose |
+| --- | --- |
+| `data/skus-by-region.json` | Canonical snapshot: `providers.<ns>.skus[].{name,tier,locations[]}`. Consumed by `Score-AzureRegionFit.ps1`. |
+| `outputs/skus-by-region/<geo>/skus-by-<geo>.md` | Human-readable per-provider table, mirroring the shape of the [APIM region availability](https://learn.microsoft.com/en-us/azure/api-management/api-management-region-availability) Learn page. |
+| `outputs/skus-by-region/<geo>/skus-by-<geo>.csv` | Long-form CSV: one row per `(provider, sku, region, available)`. |
+
+## How it works
+
+Each provider is dispatched through one of three endpoint shapes:
+
+- **Shape A**: single `az rest` call to `/providers/{ns}/skus`. Returns
+  the entire SKU × region matrix.
+- **Shape B**: iterate a SKU basket (`FREE, BASIC, STANDARD, PREMIUMV3,
+  ISOLATEDV2, DYNAMIC, ELASTICPREMIUM, …`), calling
+  `/providers/Microsoft.Web/geoRegions?sku=X` for each.
+- **Shape C**: iterate every physical region, calling
+  `/providers/{ns}/locations/{loc}/capabilities` and extracting the
+  top-level supported-tier names.
+
+Uses `az rest` with retry-and-exponential-backoff on 429 / 5xx.
+
+## Caveats
+
+- Some SKUs are further gated by **quota** rather than provider
+  availability. A region showing `yes` for `Standard_M128s` means the
+  SKU exists there; it does not mean you have quota to deploy one.
+- The Web SKU basket includes preview names (`FLEXCONSUMPTION`,
+  `WORKFLOWSTANDARD`) that the `/geoRegions?sku=X` filter may not
+  recognise; the API defaults to returning all regions in that case.
+  Treat those rows as "no explicit filter", not "everywhere".
+- Sql SKU names are prefixed `DB:` (for standalone Azure SQL Database)
+  or `MI:` (Managed Instance) so they don't collide.
 
 ---
 

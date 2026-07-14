@@ -1,0 +1,119 @@
+name: Refresh snapshots
+
+# Refresh data/skus-by-region.json and outputs/{services-by-region,skus-by-region}
+# on a weekly schedule. Auth via OIDC federated identity - no long-lived secrets.
+# See docs/AUTOMATION.md for the one-time identity setup.
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'      # Mondays 03:00 UTC
+  workflow_dispatch:
+    inputs:
+      geographies:
+        description: 'Comma-separated geography groups to refresh (default = all mainstream)'
+        required: false
+        default: 'Europe,US,Asia Pacific,UK,Canada,Australia'
+      commit_changes:
+        description: 'Commit and push changes back to the branch'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+permissions:
+  id-token: write            # OIDC
+  contents: write            # commit and push back
+
+concurrency:
+  group: refresh-snapshots
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id:       ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id:       ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Show az context
+        shell: pwsh
+        run: |
+          az account show --query "{name:name, id:id, tenantId:tenantId}" -o table
+
+      - name: Refresh SKU snapshot (data/skus-by-region.json + Europe MD/CSV)
+        shell: pwsh
+        run: ./Get-AzureSkusByRegion.ps1 -GeographyGroup 'Europe'
+
+      - name: Render SKU Markdown/CSV for each additional geography
+        shell: pwsh
+        run: |
+          $geos = '${{ github.event.inputs.geographies }}'
+          if (-not $geos) { $geos = 'Europe,US,Asia Pacific,UK,Canada,Australia' }
+          # First entry (Europe) was already rendered above.
+          $rest = ($geos -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -and $_ -ne 'Europe' })
+          foreach ($g in $rest) {
+            Write-Host "===== Rendering $g SKU MD/CSV =====" -ForegroundColor Cyan
+            ./Get-AzureSkusByRegion.ps1 -GeographyGroup $g
+          }
+
+      - name: Refresh services-by-region catalogue for each geography
+        shell: pwsh
+        run: |
+          $geos = '${{ github.event.inputs.geographies }}'
+          if (-not $geos) { $geos = 'Europe,US,Asia Pacific,UK,Canada,Australia' }
+          foreach ($g in ($geos -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ })) {
+            Write-Host "===== Refreshing services-by-region for $g =====" -ForegroundColor Cyan
+            $slug = ($g.ToLowerInvariant() -replace '\s+','-' -replace '[^a-z0-9\-]','')
+            $out  = Join-Path 'outputs/services-by-region' $slug
+            New-Item -ItemType Directory -Force -Path $out | Out-Null
+            ./Get-AzureServicesByRegion.ps1 -GeographyGroup $g -OutputDirectory $out
+          }
+
+      - name: Summarise diff
+        id: diff
+        shell: pwsh
+        run: |
+          $changed = @(git status --porcelain data/ outputs/ | Where-Object { $_ })
+          $summary = "## Refresh summary`n`n"
+          if ($changed.Count -eq 0) {
+            $summary += "**No changes** - Azure region/SKU catalogue is unchanged since the last run.`n"
+            "changed=false" >> $env:GITHUB_OUTPUT
+          } else {
+            $summary += ("**{0} file(s) changed:**`n`n" -f $changed.Count)
+            $summary += "``````"
+            $summary += "`n" + (git --no-pager diff --stat data/ outputs/ | Out-String)
+            $summary += "``````"
+            "changed=true" >> $env:GITHUB_OUTPUT
+          }
+          $summary >> $env:GITHUB_STEP_SUMMARY
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true' && github.event.inputs.commit_changes != 'false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name  'azure-services-by-region-bot'
+          git config user.email 'azure-services-by-region-bot@users.noreply.github.com'
+          git add data/ outputs/
+          # Build a summary of provider changes for the commit message.
+          summary=$(git --no-pager diff --cached --stat data/ outputs/ | tail -n 1 | tr -s ' ')
+          git commit -m "chore(snapshots): weekly refresh
+
+          Automated refresh of data/skus-by-region.json and outputs/. Diff:
+
+          ${summary}
+
+          Run: ${{ github.run_id }} (${{ github.event_name }})"
+          git push origin HEAD:${{ github.ref_name }}
